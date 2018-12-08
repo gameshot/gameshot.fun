@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+/* font, css and bootstrap links JP */
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../public/css/disclaimer.css" />
+{% endblock %}
+{% block 'javascript' %}
+<script src="{{ url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css') }}"></script>
+{% endblock %}
+
+<body>
+
+    <title>Policies and fair usage.</title>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Policies and fair usage</h1>
+            <h2>
+                This Policy is a guide to the acceptable use of <strong>GAMESHOT</strong> Website facilities and
+                services.</h2>
+            <h2> Any individual connected to the <strong>GAMESHOT</strong> Website in order to use it directly, must
+                comply with this policy and the stated purposes and Acceptable Use policies of any other Website(s) or
+                host(s) used.
+            </h2>
+            <h2> The following guidelines will be applied to determine whether or not a particular use of the Services
+                is appropriate:
+            </h2>
+            <ol>
+
+                <li>Users must respect the privacy of others. Users shall not intentionally seek information on,
+                    or represent themselves as, another user unless explicitly authorized to do so by that user.
+                    Nor shall Users obtain copies of, or modify files, other data, or passwords belonging to
+                    others.</li>
+
+                <li>Users must respect the legal protection applied to programs, data, photographs, music,
+                    written documents and other material as provided by copyright, trademark, patent, licensure and
+                    other proprietary rights mechanisms.</li>
+
+                <li>Users must respect the integrity of other public or private computing and network systems.
+                    Users shall not intentionally develop or use programs that harass other users or infiltrate any
+                    other computer, computing system or network and/or damage or alter the software components or
+                    file systems of a computer, computing system or network.</li>
+
+                <li>Use should be consistent with guiding ethical statements and accepted community standards.
+                    Use of the Services for malicious, fraudulent, or misrepresentative purposes is not acceptable.</li>
+
+                <li>The Services may not be used in ways that violate applicable laws or regulations.</li>
+
+                <li>The Services may not be used in a manner that precludes or significantly hampers network
+                    access by others. Nor may the Services be used in a manner that significantly impairs access to
+                    other networks connected to the <strong>GAMESHOT</strong> network.</li>
+
+                <li>Connections which create routing patterns that are inconsistent with the effective and
+                    shared use of the Services may not be established.
+                    Unsolicited advertising is not acceptable. Advertising is permitted on some Web pages,
+                    mailing lists, news groups and similar environments if advertising is explicitly allowed in
+                    that environment.</li>
+
+                <li>Repeated, unsolicited and/or unwanted communication of an intrusive nature is strictly
+                    prohibited. Continuing to send e-mail messages or other communications to an individual or
+                    organization after being asked to stop is not acceptable.</li>
+
+                <li>By logging on, you agree to hold the <strong>GAMESHOT</strong>harmless for any damages that may
+                    result
+                    from access to the Internet or inappropriate usage.</li>
+
+                <li>The intent of this policy is to identify certain types of uses that are not
+                    appropriate, but this policy does not necessarily enumerate all possible inappropriate
+                    uses. Using the guidelines given above, we may at any time make a determination that a
+                    particular use is not appropriate.</li>
+                <br>
+            </ol>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-outline-danger">{{ twig redirection }}Games</button>
+            <button type="submit" class="btn btn-outline-caution">{{ twig redirection }}Sign up</button>
+            <button type="submit" class="btn btn-outline-primary">{{ twig redirection }}Forum</button>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,24 @@
+/* Policies body padding and color JP */
+body {
+    padding: 5rem;
+    color: #f6f6f6;
+}
+
+/* jumbotron backgroud color JP*/
+.jumbotron {
+    background-color: #8c8c8c;
+}
+
+/* Bootstrap container text alignment and color JP */
+.container h1 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #56496b;
+}
+
+/* Font and color attribution */
+.container h2,
+li {
+    font-family: 'Cairo', sans-serif;
+    color: black;
+}
