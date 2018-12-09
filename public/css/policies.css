@@ -1,22 +1,29 @@
-/* Policies body padding and color JP */
+/* Policies body padding and color img setting JP */
 body {
     padding: 5rem;
+    background-image: url(../assets/img/hacker-2883632_1920.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #f6f6f6;
 }
 
-/* jumbotron backgroud color JP*/
+/* jumbotron properties as backgroud color and opacity JP*/
 .jumbotron {
+    border-radius: 50px;
     background-color: #8c8c8c;
+    opacity: 0.95;
+
 }
 
 /* Bootstrap container text alignment and color JP */
 .container h1 {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
-    color: #56496b;
+    color: #cc8400;
 }
 
-/* Font and color attribution */
+/* Policies font and color attribution */
 .container h2,
 li {
     font-family: 'Cairo', sans-serif;
