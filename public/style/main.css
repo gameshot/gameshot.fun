@@ -3,3 +3,53 @@ canvas {
     margin: 0;
     position: absolute;
 }
+
+#phaser {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100vh;
+}
+
+.d-flex {
+    height: 100%;
+}
+
+#form {
+    width: 60%;
+}
+
+[type="radio"] {
+    display: none;
+}
+
+[type="radio"]:checked+label>img {
+    border: 2px solid green;
+}
+
+input[name="player"]:checked+label>img {
+    transform: rotateY(180deg);
+}
+
+.form-check {
+    padding: 0;
+}
+
+input[name="background"]+label img,
+input[name="platform"]+label img {
+    width: 30px;
+    height: 30px;
+}
+
+input[name="player"]+label img {
+    height: 80px;
+    width: auto;
+}
+
+input[name="item"]+label img,
+input[name="enemy"]+label img {
+    height: 20px;
+    width: auto;
+}

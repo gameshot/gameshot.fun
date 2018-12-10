@@ -3,17 +3,184 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style/main.css">
     <title>Phaser test!</title>
 </head>
 
 <body>
+    <main>
+        <div class="d-flex justify-content-around">
+            <div id="phaser"></div>
+            <div id="form">
+                <form>
+                    <p>Select a background:</p>
+                    <div class="form-group d-flex justify-content-around">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="background" id="background" value="0" checked>
+                            <label class="form-check-label" for="background">
+                                <img src="/assets/backgrounds/black.png" alt="default">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="background" id="background1" value="1">
+                            <label class="form-check-label" for="background1">
+                                <img src="/assets/backgrounds/blue.png" alt="BG1">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="background" id="background2" value="2">
+                            <label class="form-check-label" for="background2">
+                                <img src="/assets/backgrounds/purple.png" alt="BG2">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="background" id="background3" value="3" >
+                            <label class="form-check-label" for="background3">
+                                <img src="/assets/backgrounds/darkPurple.png" alt="BG3">
+                            </label>
+                        </div>
+                    </div>
+
+                    <p>Select a player:</p>
+                    <div class="form-group d-flex justify-content-around">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="player" id="player" value="0" checked>
+                            <label class="form-check-label" for="player">
+                                <img src="/assets/players/player_thumbnail.png" alt="Default">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="player" id="player1" value="1">
+                            <label class="form-check-label" for="player1">
+                                <img src="/assets/players/adventurer_thumbnail.png" alt="Adventurer">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="player" id="player2" value="2">
+                            <label class="form-check-label" for="player2">
+                                <img src="/assets/players/female_thumbnail.png" alt="Female">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="player" id="player3" value="3" >
+                            <label class="form-check-label" for="player3">
+                                <img src="/assets/players/soldier_thumbnail.png" alt="Soldier">
+                            </label>
+                        </div>
+                    </div>
+
+                    <p>Select a platform:</p>
+                    <div class="form-group d-flex justify-content-around">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="platform" id="platform" value="0" checked>
+                            <label class="form-check-label" for="platform">
+                                <img src="/assets/platforms/platformPack_tile004.png" alt="Default">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="platform" id="platform1" value="1">
+                            <label class="form-check-label" for="platform1">
+                                <img src="/assets/platforms/platformPack_tile016.png" alt="Plat1">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="platform" id="platform2" value="2">
+                            <label class="form-check-label" for="platform2">
+                                <img src="/assets/platforms/platformPack_tile001.png" alt="Plat2">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="platform" id="platform3" value="3" >
+                            <label class="form-check-label" for="platform3">
+                                <img src="/assets/platforms/platformPack_tile003.png" alt="Plat3">
+                            </label>
+                        </div>
+                    </div>
+
+                    <p>Select an item to collect:</p>
+                    <div class="form-group d-flex justify-content-around">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="item" id="item" value="0" checked>
+                            <label class="form-check-label" for="item">
+                                <img src="/assets/items/pill_yellow.png" alt="Default">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="item" id="item1" value="1">
+                            <label class="form-check-label" for="item1">
+                                <img src="/assets/items/shield_bronze.png" alt="Item1">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="item" id="item2" value="2">
+                            <label class="form-check-label" for="item2">
+                                <img src="/assets/items/star_silver.png" alt="Item2">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemsAmount">How many?</label>
+                        <select class="form-control" id="itemsAmount">
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+
+                    <p>Select an enemy to avoid:</p>
+                    <div class="form-group d-flex justify-content-around">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="enemy" id="enemy" value="0" checked>
+                            <label class="form-check-label" for="enemy">
+                                <img src="/assets/items/bolt_bronze.png" alt="Default">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="enemy" id="enemy1" value="1">
+                            <label class="form-check-label" for="enemy1">
+                                <img src="/assets/items/bolt_gold.png" alt="enemy1">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="enemy" id="enemy2" value="2">
+                            <label class="form-check-label" for="enemy2">
+                                <img src="/assets/items/bolt_silver.png" alt="enemy2">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check text-center">
+                        <input type="checkbox" class="form-check-input" id="enemyCollision">
+                        <label class="form-check-label" for="enemyCollision">Should they collide with the platforms?</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="winScore">Score to reach in order to win? (10 - 50)</label>
+                        <input type="range" class="form-control-range" id="winScore" min="10" max="50" step="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <!-- Phaser cdn and my game script -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.15.1/phaser.min.js"></script> -->
 
     <!-- <script src="script/phaser.js"></script> -->
-    <script src="script/game.js"></script>
+    <script src="script/gameform.js"></script>
 </body>
 
 </html>

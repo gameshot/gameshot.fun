@@ -2,6 +2,7 @@ const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    parent: 'phaser',
     physics: {
         default: 'arcade',
         arcade: {
@@ -166,4 +167,22 @@ function hitEnemy (player, enemy)
     player.anims.play('turn');
 
     gameOver = true;
+}
+
+window.addEventListener("resize", resize, false);
+
+function resize() {
+    var canvas = document.querySelector("canvas");
+    var windowWidth = window.innerWidth-20;
+    var windowHeight = window.innerHeight-150;
+    var windowRatio = windowWidth / windowHeight;
+    var gameRatio = game.config.width / game.config.height;
+    if(windowRatio < gameRatio){
+        canvas.style.width = windowWidth + "px";
+        canvas.style.height = (windowWidth / gameRatio) + "px";
+    }
+    else{
+        canvas.style.width = (windowHeight * gameRatio) + "px";
+        canvas.style.height = windowHeight + "px";
+    }
 }
