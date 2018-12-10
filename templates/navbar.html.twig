@@ -1,37 +1,38 @@
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="../public/css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
 {% endblock %}
 
 
 {% block navbar %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  	</button>
+<nav>
     {%  set route = app.request.get('_route') %}
-  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    	<ul class="navbar-nav mr-auto">
-      		<li class="nav-item{% if route == 'homepage' %} active{% endif %}">
-        		<a class="nav-link" href="{{ path("homepage") }}">homepage</a>
-      		</li>
-      		<li class="nav-item{% if route == 'about' %} active{% endif %}">
-        		<a class="nav-link" href="{{ path("about") }}">about</a>
-      		</li>
-      		{% if not is_granted('ROLE_AUTHENTICATED_FULLY') %}
-      		<li class="nav-item{% if route == 'register' %} active{% endif %}">
-        		<a class="nav-link" href="{{ path("register") }}">Sign Up</a>
-      		</li>
-      		{% endif %}
-      		<li class="nav-item{% if route == 'login' %} active{% endif %}">
-        		<a class="nav-link" href="{{ path("login") }}">Log In</a>
-      		</li>
-            {% if is_granted('ROLE_AUTHENTICATED_FULLY') %}
-      		<li class="nav-item{% if route == 'logout' %} active{% endif %}">
-        		<a class="nav-link" href="{{ path("logout") }}">Log Out</a>
-      		</li>
-      		{% endif %}
-    	</ul>
-  	</div>
+  	
+  	<ul class="PrimaryNav with-indicator">
+        <li class="Nav-item {% if route == 'game' %}is-active{% endif %}">
+            <a href="{{ path("game") }}">Game</a>
+        </li>
+        <li class="Nav-item {% if route == 'forum' %}is-active{% endif %}">
+            <a href="{{ path("forum") }}">Forum</a>
+        </li>
+	    
+        {% if not is_granted('ROLE_AUTHENTICATED_FULLY') %}
+        <li class="Nav-item {% if route == 'login' %}is-active{% endif %}">
+            <a href="{{ path("login") }}">Login</a>
+        </li>
+        <li class="Nav-item {% if route == 'register' %}is-active{% endif %}">
+            <a href="{{ path("register") }}">Sign Up</a>
+        </li>
+      	{% endif %}
+      	
+      	{% if is_granted('ROLE_AUTHENTICATED_FULLY') %}
+      	<li class="Nav-item {% if route == 'logout' %}is-active{% endif %}">
+            <a href="{{ path("logout") }}">Log Out</a>
+        </li>
+        <li class="Nav-item {% if route == 'profil' %}is-active{% endif %}">
+            <a href="{{ path("profil") }}">Profil</a>
+        </li>
+      	{% endif %}
+    </ul>
 </nav>
 {% endblock %}
