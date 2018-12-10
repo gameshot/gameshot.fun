@@ -1,7 +1,7 @@
 /*Sign Up backgroud, padding, position, margin, size and color. JP */
 body {
     padding: 5rem;
-    background-image: url(../img/hacker-2883632_1920.jpg);
+    background-image: url(/assets/img/phaser.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

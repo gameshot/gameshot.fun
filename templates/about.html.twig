@@ -1,9 +1,26 @@
 
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="../public/css/about.css" />
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/about.css" />
 {% endblock %}
 
 {% block body %}
-<p> GameShot is about game creation and discussion around games</p>
+    <body>
+    <div class="card" style="width: 50rem;">
+        <img class="card-img-top" src="/assets/img/phaser.png" alt="Card image cap">
+        <div class="card-body">
+            <h1>GameShot Team</h1>
+            <p class="card-text">This team was created for the final project in our Full-stack Web Developer
+                Certification Course @ NumericALL.</p>
+            <p>From right to left:</p>
+            <p>Nidhi SHETTY</p>
+            <p>Stefano PETRUZZELLI</p>
+            <p>Jean-Paul BARREIRAS</p>
+            <p>Danny JESUS PEREIRA</p>
+        </div>
+    </div>
+    </body>
 {% endblock %}
+
