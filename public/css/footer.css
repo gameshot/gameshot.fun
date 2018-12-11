@@ -1,8 +1,16 @@
 footer{
-    background-color: #0000F0;
+
+    background-color: rgba(143,21,21,0.671);
     position: absolute;
     bottom: 0;
-    height: 150px;
-    width: 100%;
     left: 0;
+    height: 100px;
+    width: 100%;
+    font-family: 'Cairo', sans-serif;
+    color: #56496b;
 }
+.navbar navbar-expand-lg {
+    background-color: rgba(143, 21, 21, 0.671);
+    display: block;
+}
+
