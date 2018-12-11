@@ -1,7 +1,7 @@
 /* Policies body padding and color img setting JP */
 body {
     padding: 5rem;
-    background-image: url(../assets/img/hacker-2883632_1920.jpg);
+    background-color: lightgrey;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,8 +24,7 @@ body {
 }
 
 /* Policies font and color attribution */
-.container h2,
-li {
+.container h2 {
     font-family: 'Cairo', sans-serif;
     color: black;
 }

@@ -1,5 +1,6 @@
 
 {% block stylesheets %}
+
     <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
 {% endblock %}
 
@@ -16,22 +17,22 @@
             <a href="{{ path("forum") }}">Forum</a>
         </li>
 	    
-        {% if not is_granted('ROLE_AUTHENTICATED_FULLY') %}
-        <li class="Nav-item {% if route == 'login' %}is-active{% endif %}">
-            <a href="{{ path("login") }}">Login</a>
-        </li>
-        <li class="Nav-item {% if route == 'register' %}is-active{% endif %}">
-            <a href="{{ path("register") }}">Sign Up</a>
-        </li>
+        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="Nav-item {% if route == 'login' %}is-active{% endif %}">
+                <a href="{{ path("login") }}">Login</a>
+            </li>
+            <li class="Nav-item {% if route == 'register' %}is-active{% endif %}">
+                <a href="{{ path("register") }}">Sign Up</a>
+            </li>
       	{% endif %}
       	
-      	{% if is_granted('ROLE_AUTHENTICATED_FULLY') %}
-      	<li class="Nav-item {% if route == 'logout' %}is-active{% endif %}">
-            <a href="{{ path("logout") }}">Log Out</a>
-        </li>
-        <li class="Nav-item {% if route == 'profil' %}is-active{% endif %}">
-            <a href="{{ path("profil") }}">Profil</a>
-        </li>
+      	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          	<li class="Nav-item {% if route == 'logout' %}is-active{% endif %}">
+                <a href="{{ path("logout") }}">Log Out</a>
+            </li>
+            <li class="Nav-item {% if route == 'profile' %}is-active{% endif %}">
+                <a href="{{ path("profile") }}">Profile</a>
+            </li>            
       	{% endif %}
     </ul>
 </nav>

@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-/* css links JP */
+    {# style sheet links #}
 
 {% block stylesheets %}
-
-    <link rel="stylesheet" type="text/css" href="../public/css/policies.css" />
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/policies.css" />
 {% endblock %}
 
 {% block body  %}
+
+    {% set route = app.request.get('_route') %}
 
     <title>Policies and fair usage.</title>
 
@@ -69,11 +71,6 @@
                     particular use is not appropriate.</li>
                 <br>
             </ol>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-danger">{{ twig redirection }}Games</button>
-            <button type="submit" class="btn btn-outline-caution">{{ twig redirection }}Sign up</button>
-            <button type="submit" class="btn btn-outline-primary">{{ twig redirection }}Forum</button>
         </div>
     </div>
 

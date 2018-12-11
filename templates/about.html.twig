@@ -7,6 +7,9 @@
 {% endblock %}
 
 {% block body %}
+
+    {% set route = app.request.get('_route') %}
+
     <body>
     <div class="card" style="width: 50rem;">
         <img class="card-img-top" src="/assets/img/phaser.png" alt="Card image cap">
