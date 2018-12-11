@@ -5,16 +5,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class ProfilController extends Controller
+class ProfileController extends Controller
 {
     
     /**
      *
-     * @Route("/profil", name="profil")
+     * @Route("/profile", name="profile")
      *
      */
-    public function profil(){
-        return $this->render('profil.html.twig');
+    public function profile(){
+        return $this->render('profile.html.twig');
     }
 }
 
