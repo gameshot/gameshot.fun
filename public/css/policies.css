@@ -1,20 +1,11 @@
-/* Policies body padding and color img setting JP */
-body {
-    padding: 5rem;
-    background-color: lightgrey;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #f6f6f6;
-}
 
-/* jumbotron properties as backgroud color and opacity JP*/
+/* jumbotron properties as backgroud color and opacity JP */
 .jumbotron {
-    border-radius: 50px;
-    background-color: #8c8c8c;
-    opacity: 0.95;
+     border-radius: 50px;
+     background-color: #8c8c8c;
+     opacity: 0.95;
 
-}
+ }
 
 /* Bootstrap container text alignment and color JP */
 .container h1 {
@@ -23,8 +14,13 @@ body {
     color: #56496b;
 }
 
-/* Policies font and color attribution */
+/* Policies font and costume color attribution JP */
 .container h2 {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'cairo', sans-serif;
     color: black;
+}
+/* Ordered list text font and costume color attribution JP */
+.container li {
+    font-family: 'cairo', sans-serif;
+    color: whitesmoke;
 }

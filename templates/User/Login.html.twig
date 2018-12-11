@@ -8,14 +8,25 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <div class="jumbotron">
-        <form action="{{ path('login') }}" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-    
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" />
-            <button type="submit">login</button>
-        </form>
+
+    <div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="/assets/img/ninja.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <form action="{{ path('login') }}" method="post">
+                <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}" placeholder="Username" required autofocus>
+                    <br>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form>
+        </div>
     </div>
+
 {% endblock %}
+
+{% block footer  "" %}
+
+

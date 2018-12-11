@@ -1,27 +1,31 @@
 
-
-
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="/css/footer.css" />
+{% endblock %}
 
 	{% set route = app.request.get('_route') %}
-<footer>
-	<nav class="navbar navbar-expand-lg ">
-		<ul class="navbar-nav">
-			<li class="nav-item active">
-			<li class="Nav-item {% if route == 'policies' %}is-active{% endif %}">
-				<a href="{{ path("policies") }}">Policies</a>
-			</li>
-			<li class="Nav-item {% if route == 'disclaimer' %}is-active{% endif %}">
-				<a href="{{ path("disclaimer") }}">Disclaimer</a>
-			</li>
-			<li class="Nav-item {% if route == 'phaser' %}is-active{% endif %}">
-				<a href="{{ path("phaser") }}">Phaser Framework</a>
-			</li>
-			<li class="Nav-item {% if route == 'about' %}is-active{% endif %}">
-				<a href="{{ path("about") }}">About us</a><li class="nav-item active">
-				<p>&copy; GameShot 2018</p>
-			</li>
-			</li>
-		</ul>
-	</nav>
-</footer>
-
+{% block footer %}
+	<footer>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item" {% if route == 'policies' %}is-active{% endif %}>
+						<a class="nav-link" href="{{ path("policies") }}">Policies</a>
+					</li>
+					<li class="nav-item" {% if route == 'disclaimer' %}is-active{% endif %}>
+						<a class="nav-link" href="{{ path("disclaimer") }}">Disclaimer</a>
+					</li>
+					<li class="nav-item" {% if route == 'phaser' %}is-active{% endif %}>
+						<a class="nav-link" href="{{ path("phaser") }}">Phaser Framework</a>
+					</li>
+					<li class="nav-item" {% if route == 'about' %}is-active{% endif %}>
+						<a class="nav-link" href="{{ path("about") }}">About Us</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<a class="nav-item" style="color: black"> &copy; GameShot 2018</a>
+					</a>
+				</form>
+			</div>
+		</nav>
+	</footer>
+{% endblock %}

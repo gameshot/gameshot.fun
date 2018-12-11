@@ -1,0 +1,8 @@
+body {
+    background-color: lightgrey;
+}
+
+
+body, h2 {
+    font-family: 'orbitron', sans-serif;
+}
