@@ -57,9 +57,8 @@ class AppFixtures extends Fixture
             {
                 $topic = new Topic();
                 $topic->setName($topicName);
-                $topic->setCategory($category);
-                $manager->persist($topic);
                 $category->addTopic($topic);
+                $manager->persist($topic);
             }
             $manager->persist($category);
         }
