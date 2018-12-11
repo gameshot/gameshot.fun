@@ -27,7 +27,7 @@ class DefaultController
     {
              
         return new Response(
-            $this->twig->render('homepage.html.twig'));
+            $this->twig->render('landing.html.twig'));
     }
 }
 

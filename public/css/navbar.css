@@ -1,3 +1,4 @@
+
 .PrimaryNav {
   list-style: none;
   margin: 50px auto;
@@ -7,29 +8,31 @@
 }
 
 .Nav-item {
-  background: #c8c8c8;
+  background: #CC8400;
   display: block;
   float: left;
   margin: 0;
   padding: 0;
   width: 25%;
   text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
 }
 
 .Nav-item:first-child {
-  border-radius: 3px 0 0 3px;
+  border-radius: 5px 0 0 5px;
 }
 
 .Nav-item:last-child {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 5px 5px 0;
 }
 
 .Nav-item.is-active a {
-  color: #CC8400;
+  color: rgba(143, 21, 21, 0.671);
 }
 
 .Nav-item a {
-  color: white;
+  color: #ffffff;
   display: block;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -37,7 +40,7 @@
 }
 
 .Nav-item a:hover {
-  color: #CC8400;
+  color: rgba(143, 21, 21, 0.671);
 }
 
 .with-indicator {
@@ -56,7 +59,7 @@
 
 .with-indicator .Nav-item:last-child:before {
   border: 6px solid transparent;
-  border-top-color: #CC8400;
+  border-top-color: rgba(143, 21, 21, 0.671);
   width: 0;
   height: 0;
   top: 0;
@@ -65,12 +68,13 @@
 }
 
 .with-indicator .Nav-item:last-child:after {
-  background: #CC8400;
+  background: rgba(143, 21, 21, 0.671);
   top: -6px;
   bottom: -6px;
   left: 0;
   width: 25%;
   z-index: -1;
+  border-radius: 5px;
 }
 
 .with-indicator .Nav-item:nth-child(1).is-active ~ .Nav-item:last-child:after {
@@ -148,7 +152,7 @@
 }
 
 html {
-  background-color: white;
+  background-color: #ffffff;
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
 }
