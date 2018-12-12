@@ -1,6 +1,9 @@
 
 /* jumbotron properties as backgroud color and opacity JP */
 .jumbotron {
+    margin: auto;
+    margin-bottom: 40px;
+    width: 900px;
     border-radius: 50px;
     background-color: #8c8c8c;
     opacity: 0.95;

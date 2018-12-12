@@ -1,12 +1,12 @@
-.container-fluid{
-    height: 100%;
-}
 
-/* jumbotron properties as backgroud color and opacity JP */
+/* jumbotron properties as background color and opacity JP */
 .jumbotron {
-     border-radius: 50px;
-     background-color: #8c8c8c;
-     opacity: 0.95;
+    margin: auto;
+    margin-bottom: 40px;
+    width: 900px;
+    border-radius: 50px;
+    background-color: #8c8c8c;
+    opacity: 0.95;
 
  }
 

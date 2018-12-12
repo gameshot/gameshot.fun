@@ -1,11 +1,28 @@
+
+
 h2 {
     text-align: center;
     font-family: 'Cairo', sans-serif;
 }
-br {
-    height: 2px;
+
+form {
+    padding-bottom: 20px;
 }
 
+label {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* game sizing confirmation and positioning */
+#phaser {
+    width: 800px;
+    margin: auto;
+}
+
+#itemsAmount {
+    font-family: 'Cairo', sans-serif;
+
+}
 
 .backgrounds{
     width: 100px;
@@ -13,70 +30,77 @@ br {
     border-radius: 50px;
 }
 
+
 .jumbotron_1 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: whitesmoke;
-    margin-bottom: 2px;
 }
 
 .jumbotron_2 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: #CC8400;
-    margin-bottom: 2px;
 }
 
 .jumbotron_3 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: whitesmoke;
-    margin-bottom: 2px;
 }
 
 
 .jumbotron_4 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: #CC8400;
-    margin-bottom: 2px;
 }
 
 
 .jumbotron_5 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: whitesmoke;
-    margin-bottom: 2px;
 }
 
 
 .jumbotron_6 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: #CC8400;
-    margin-bottom: 2px;
 }
 
 .jumbotron_7 {
     width: 800px;
     margin: auto;
+    margin-bottom: 4px;
     border-radius: 5px;
     background-color: whitesmoke;
-    margin-bottom: 2px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-
+.jumbotron_7 button  {
+    background-color: #CC8400;
+    text-align: center;
+    width: 290px;
+    margin: auto;
+}
 
 .player {
     background-color: whitesmoke;
-
     border-radius: 50px;
 }
 
@@ -86,12 +110,7 @@ br {
 }
 
 .objects {
-    background-color: whitesmoke;
-    border-radius: 50px;
+    height: 35px;
+    width: 35px;
 }
 
-/* game sizing confirmation and positioning */
-#phaser {
-    width: 800px;
-    margin: auto;
-}

@@ -1,11 +1,17 @@
 
+/* card properties as background color and opacity JP */
 .card {
     margin: auto;
+    margin-bottom: 40px;
+    padding-top: 50px;
+    width: 900px;
+    border-radius: 50px;
+    background-color: #8c8c8c;
+    opacity: 0.95;
 }
 
 .card .card-body {
     text-align: center;
-    background-color: #8c8c8c;
 }
 
 .card .card-body h1 {

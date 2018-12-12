@@ -11,7 +11,6 @@
 
 {% block body %}
     <main>
-
         <div id="phaser"></div>
         <form>
             <div class="jumbotron_1">
@@ -181,23 +180,21 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-group form-check text-center">
+                            <input type="checkbox" class="form-check-input" id="enemyCollision">
+                            <label class="form-check-label" for="enemyCollision">Should they collide with the platforms?</label>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="jumbotron_7">
                 <div class="d-flex justify-content-around">
                     <div id="form">
-                        <div class="form-group form-check text-center">
-                            <input type="checkbox" class="form-check-input" id="enemyCollision">
-                            <label class="form-check-label" for="enemyCollision">Should they collide with the platforms?</label>
-                        </div>
-
                         <div class="form-group">
-                            <label for="winScore">Score to reach in order to win? (10 - 50)</label>
+                            <label for="winScore">Score to be reached in order to win?   (10 - 50)</label>
                             <input type="range" class="form-control-range" id="winScore" min="10" max="50" step="10">
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit to play GameShot</button>
                     </div>
                 </div>
             </div>
