@@ -1,3 +1,6 @@
+.container-fluid{
+    height: 100%;
+}
 
 /* jumbotron properties as backgroud color and opacity JP */
 .jumbotron {
