@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/.css" />
+{% endblock %}
+
+
+{% block title %} GAME SHOT{% endblock %}
+
+{% block body %}
+
+    <p>{{ dump(threads) }}</p>
+
+{% endblock %}

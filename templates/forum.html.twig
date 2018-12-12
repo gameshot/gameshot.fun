@@ -9,14 +9,15 @@
 {% block title %} GAME SHOT{% endblock %}
 
 {% block body %}
-    <h1>This is forum!!!</h1>
-    {% for category in categoryList %}
-        {{ dump(category.getTopics()) }}
+
+    {% for key,category in topicList %}
         <div class="card">
-            <h5 class="card-header">{{ category.getName() }}</h5>
-            <div class="card-body">
-                <a href="#" class="card-link"></a>
-            </div>
+            <h5 class="card-header">{{ key }}</h5>
+            {% for topic in category %}
+                <div class="card-body">
+                    <a href="/forum/{{ topic|lower }}?category={{ key|lower }}" class="card-link">{{ topic }}</a>
+                </div>
+            {% endfor %}
         </div>
     {% endfor %}
 
