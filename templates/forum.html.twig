@@ -1,1 +1,23 @@
-Hello
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/.css" />
+{% endblock %}
+
+
+{% block title %} GAME SHOT{% endblock %}
+
+{% block body %}
+    <h1>This is forum!!!</h1>
+    {% for category in categoryList %}
+        {{ dump(category) }}
+        <div class="card">
+            <h5 class="card-header">{{ category.getName() }}</h5>
+            <div class="card-body">
+                <a href="#" class="card-link"></a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
