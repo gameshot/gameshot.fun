@@ -11,4 +11,37 @@
 
 {% block body %}
 <h1>This is the profile page guys</h1>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">Username:</div>
+    <div class="col">{{ app.user.username }}</div>
+  </div>
+  <div class="row">
+    <div class="col">Email:</div>
+    <div class="col">{{ app.user.email }}</div>
+  </div>
+  <div class="row">
+  {% for role in app.user.roles %}
+    <div class="col">Role:</div>
+        <div class="col">{{ role }} </div>
+  </div>
+  {% endfor %}
+  
+<div class="row">
+  {% for role in app.user.threads %}
+    <div class="col">Thread:</div>
+        <div class="col">{{ thread }} </div>
+  </div>
+  {% endfor %}
+  
+  <div class="row">
+  {% for role in app.user.posts %}
+    <div class="col">Post:</div>
+        <div class="col">{{ post }} </div>
+  </div>
+  {% endfor %}
+
+{% endif %}
 {% endblock %}
