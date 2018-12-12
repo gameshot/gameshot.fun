@@ -3,31 +3,36 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="/css/.css" />
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
 {% endblock %}
 
 
 {% block title %} GAME SHOT{% endblock %}
 
 {% block body %}
-<h1>This is the profile page guys</h1>
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<h2>Welcome to your profile page, {{ app.user.username }}!</h2>
 
-<div class="container">
-  <div class="row">
-    <div class="col">Username:</div>
-    <div class="col">{{ app.user.username }}</div>
-  </div>
-  <div class="row">
-    <div class="col">Email:</div>
-    <div class="col">{{ app.user.email }}</div>
-  </div>
-  <div class="row">
-  {% for role in app.user.roles %}
-    <div class="col">Role:</div>
-        <div class="col">{{ role }} </div>
-  </div>
-  {% endfor %}
-  
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="container">
+    	<div class="card card-container">
+    		<img id="profile-img" class="profile-img-card" src="/assets/img/ninja.png" />
+    		<article class="profileInfo">
+    			<p id="profile-name" class="profile-name-card">Username:</p>	
+    			<p id="profile-name" class="profile-name-card">{{ app.user.username }}</p>		
+    		</article>
+    		<br>
+    		<article class="profileInfo">
+    			<p id="profile-email" class="profile-name-card">Email::</p>	
+    			<p id="profile-email" class="profile-name-card">{{ app.user.email }}</p>		
+    		</article>
+    			<br>
+    		<article class="profileInfo">
+                {% for role in app.user.roles %}
+                	<p id="profile-role" class="profile-name-card">Role:</p>            
+                	<p id="profile-role" class="profile-name-card">{{ role }}</p>
+                {% endfor %}			
+    		</article>
+    	</div>
+    </div>
 {% endif %}
 {% endblock %}
