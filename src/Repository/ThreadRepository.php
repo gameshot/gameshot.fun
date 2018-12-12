@@ -19,22 +19,17 @@ class ThreadRepository extends ServiceEntityRepository
         parent::__construct($registry, Thread::class);
     }
 
-    // /**
-    //  * @return Thread[] Returns an array of Thread objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+      * @return Thread[] Returns an array of Thread objects
+      */
+    public function findByTopic($topic)
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('t.topic = :topic')
+            ->setParameter('topic', $topic)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Thread

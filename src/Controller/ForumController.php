@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Post;
+use App\Entity\Thread;
 use App\Entity\Topic;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -42,12 +44,25 @@ class ForumController extends Controller
      */
     public function topicDisplay(Topic $topic) {
         $manager = $this->getDoctrine()->getManager();
-        $threadList = [];
-        $threads = 'test';
+        $threads = $manager->getRepository(Thread::class)->findByTopic($topic);
         return $this->render(
             'thread.html.twig',
             [
                 'threads' => $threads
+            ]
+        );
+    }
+
+    /**
+     * @Route("forum/{name}/thread/{thread}"), name="post_display")
+     */
+    public function displayPost(Topic $topic, Thread $thread) {
+        $manager = $this->getDoctrine()->getManager();
+        $posts = $manager->getRepository(Post::class)->findByThread($thread);
+        return $this->render(
+            'post.html.twig',
+            [
+                'posts' => $posts
             ]
         );
     }

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/.css" />
+{% endblock %}
+
+
+{% block title %} GAME SHOT{% endblock %}
+
+{% block body %}
+
+    <h2>{{ posts[0].getThread().getName() }}</h2>
+
+    <div class="card">
+        {% for post in posts %}
+            <h6 class="card-header">{{ post.getUser().getUsername() }}</h6>
+            <div class="card-body">
+                <p>{{ post.getContent() }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="card">
+
+    </div>
+{% endblock %}

@@ -8,13 +8,14 @@
 {% block navbar %}
 <nav>
     {%  set route = app.request.get('_route') %}
+    {%  set forum = app.request.uri %}
   	
   	<ul class="PrimaryNav with-indicator">
         <li class="Nav-item {% if route == 'game' %}is-active{% endif %}">
             <a href="{{ path("game") }}">Game</a>
         </li>
-        <li class="Nav-item {% if route == 'forum' %}is-active{% endif %}">
-            <a href="{{ path("forum") }}">Forum</a>
+        <li class="Nav-item {% if route == 'forum' or 'forum' in forum %}is-active{% endif %}">
+            <a href="{{ path("forum")  }}">Forum</a>
         </li>
 	    
         {% if not is_granted('IS_AUTHENTICATED_FULLY') %}

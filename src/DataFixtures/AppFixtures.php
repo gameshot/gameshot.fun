@@ -9,6 +9,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Post;
 use App\Entity\Role;
 use App\Entity\Thread;
 use App\Entity\Topic;
@@ -49,9 +50,15 @@ class AppFixtures extends Fixture
         ];
 
         $threadList = [
-            'stuff',
-            'stuff',
-            'stuff'
+            'stuff1',
+            'stuff2',
+            'stuff3'
+        ];
+
+        $postList = [
+            'test',
+            'loremu',
+            'lurem'
         ];
 
         $date = new \DateTime();
@@ -80,6 +87,14 @@ class AppFixtures extends Fixture
                     $thread->setUsers($user);
                     $thread->setTopic($topic);
                     $thread->setDate($date);
+                    foreach ($postList as $postContent) {
+                        $post = new Post();
+                        $post->setContent($postContent);
+                        $post->setDate($date);
+                        $post->setThread($thread);
+                        $post->setUser($user);
+                        $manager->persist($post);
+                    }
                     $manager->persist($thread);
                 }
                 $manager->persist($topic);

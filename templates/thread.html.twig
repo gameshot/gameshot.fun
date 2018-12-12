@@ -10,6 +10,16 @@
 
 {% block body %}
 
-    <p>{{ dump(threads) }}</p>
+    <div class="card">
+        <h5 class="card-header d-flex justify-content-between">
+            <span>{{ threads[0].getTopic().getName() }}</span>
+            <span><button type="button" class="btn btn-dark">New thread</button></span>
+        </h5>
+        {% for thread in threads %}
+            <div class="card-body">
+                <a href="/forum/{{ threads[0].getTopic().getLabel() }}/thread/{{ thread.getId() }}" class="card-link">{{ thread.getName()}}</a>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

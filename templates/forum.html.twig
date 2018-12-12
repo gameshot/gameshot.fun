@@ -15,7 +15,7 @@
             <h5 class="card-header">{{ key }}</h5>
             {% for topic in category %}
                 <div class="card-body">
-                    <a href="/forum/{{ topic|lower }}?category={{ key|lower }}" class="card-link">{{ topic }}</a>
+                    <a href="/forum/{{ topic|lower }}" class="card-link">{{ topic }}</a>
                 </div>
             {% endfor %}
         </div>

@@ -49,6 +49,9 @@ class Post
 
     public function getContent(): ?string
     {
+        if ($this->content != '') {
+            return stream_get_contents($this->content);
+        }
         return $this->content;
     }
 
