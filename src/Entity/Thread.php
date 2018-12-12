@@ -20,13 +20,19 @@ class Thread
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+    private $name;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Topic", inversedBy="threads")
      * @ORM\JoinColumn(nullable=false)
      */
     private $topic;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="threads")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="threads", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $users;
@@ -45,6 +51,18 @@ class Thread
     public function __construct()
     {
         $this->posts = new ArrayCollection();
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function getId(): ?int
@@ -69,7 +87,7 @@ class Thread
         return $this->users;
     }
 
-    public function setUsers(?User $users): self
+    public function setUsers(User $users): self
     {
         $this->users = $users;
 
