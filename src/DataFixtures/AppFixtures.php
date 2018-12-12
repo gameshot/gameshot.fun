@@ -42,8 +42,8 @@ class AppFixtures extends Fixture
     public function loadCategories(ObjectManager $manager)
     {
         $categoryList = [
-            'Gameshot discussion',
-            'Game discussions'
+            'Gameshot',
+            'Games'
         ];
         $topicList = [
             'Gameshot',

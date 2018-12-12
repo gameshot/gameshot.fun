@@ -11,7 +11,7 @@
 {% block body %}
     <h1>This is forum!!!</h1>
     {% for category in categoryList %}
-        {{ dump(category) }}
+        {{ dump(category.getTopics()) }}
         <div class="card">
             <h5 class="card-header">{{ category.getName() }}</h5>
             <div class="card-body">
