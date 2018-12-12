@@ -52,11 +52,8 @@ class UserController extends Controller
     }
     
     /**
-     *
-     *@Route("/login", name="login")
-     *
+     * @Route("/login", name="login")
      */
-    
     public function login(AuthenticationUtils $authenticationUtils)
     {
         $error = $authenticationUtils->getLastAuthenticationError();
