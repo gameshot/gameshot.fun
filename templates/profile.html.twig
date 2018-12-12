@@ -29,19 +29,5 @@
   </div>
   {% endfor %}
   
-<div class="row">
-  {% for role in app.user.threads %}
-    <div class="col">Thread:</div>
-        <div class="col">{{ thread }} </div>
-  </div>
-  {% endfor %}
-  
-  <div class="row">
-  {% for role in app.user.posts %}
-    <div class="col">Post:</div>
-        <div class="col">{{ post }} </div>
-  </div>
-  {% endfor %}
-
 {% endif %}
 {% endblock %}
