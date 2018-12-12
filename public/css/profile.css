@@ -35,5 +35,6 @@ body {
 	display: flex;
 }
 .profileInfo p:first-child{
-	width: 70%;
+	width: 40%;
+	font-size: 110%;
 }
