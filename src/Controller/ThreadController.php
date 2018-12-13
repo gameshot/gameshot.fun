@@ -53,7 +53,6 @@ class ThreadController extends Controller
             $manager->persist($post);
             $manager->flush();
 
-            $session->getFlashBag()->add('success', 'The thread was successfully created');
             return $this->redirect('/forum/' . $thread->getTopic()->getLabel());
 
         }

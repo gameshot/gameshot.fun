@@ -20,7 +20,16 @@
             </div>
         {% endfor %}
     </div>
-    <div class="card">
-
-    </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="card">
+            {{ form_start(form) }}
+                {{ form_row(form.content) }}
+                {% do form.thread.name.setRendered() %}
+            {{ form_end(form) }}
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            You need to be logged in to post messages!!
+        </div>
+    {% endif %}
 {% endblock %}

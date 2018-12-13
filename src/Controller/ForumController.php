@@ -5,9 +5,9 @@ use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Thread;
 use App\Entity\Topic;
-use Doctrine\Common\Persistence\ObjectManager;
+use App\Form\PostFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -56,13 +56,31 @@ class ForumController extends Controller
     /**
      * @Route("forum/{name}/thread/{thread}"), name="post_display")
      */
-    public function displayPost(Topic $topic, Thread $thread) {
+    public function displayPost(Request $request, Topic $topic, Thread $thread) {
         $manager = $this->getDoctrine()->getManager();
+        $post = new Post();
+        $date = new \DateTime();
+        $date->format('Y-m-d H:i:s');
+        $post->setDate($date);
+
+        $form = $this->createForm(PostFormType::class, $post, ['standalone' => true]);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $post->setThread($thread);
+            $post->setUser($this->getUser());
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($post);
+            $manager->flush();
+            return $this->redirect('/forum/' . $thread->getTopic()->getLabel() . '/thread/' . $thread->getId());
+        }
+
         $posts = $manager->getRepository(Post::class)->findByThread($thread);
         return $this->render(
             'post.html.twig',
             [
-                'posts' => $posts
+                'posts' => $posts,
+                'form' => $form->createView()
             ]
         );
     }
