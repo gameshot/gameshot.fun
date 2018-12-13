@@ -1,4 +1,6 @@
-
+html {
+    scroll-behavior: smooth;
+}
 
 h2 {
     text-align: center;
@@ -35,6 +37,7 @@ label {
     width: 800px;
     margin: auto;
     margin-bottom: 4px;
+    margin-top: 5rem;
     border-radius: 5px;
     background-color: whitesmoke;
 }
