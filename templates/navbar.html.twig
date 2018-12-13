@@ -8,30 +8,30 @@
 {% block navbar %}
 <nav>
     {%  set route = app.request.get('_route') %}
-    {%  set forum = app.request.uri %}
+    {%  set uri = app.request.uri %}
   	
   	<ul class="PrimaryNav with-indicator">
-        <li class="Nav-item {% if route == 'game' %}is-active{% endif %}">
+        <li class="Nav-item {% if route == 'game' and 'game' in uri %}is-active{% endif %}">
             <a href="{{ path("game") }}">Game</a>
         </li>
-        <li class="Nav-item {% if route == 'forum' or 'forum' in forum %}is-active{% endif %}">
+        <li class="Nav-item {% if route == 'forum' or 'forum' in uri %}is-active{% endif %}">
             <a href="{{ path("forum")  }}">Forum</a>
         </li>
 	    
         {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-            <li class="Nav-item {% if route == 'login' %}is-active{% endif %}">
+            <li class="Nav-item {% if route == 'login' and 'login' in uri %}is-active{% endif %}">
                 <a href="{{ path("login") }}">Login</a>
             </li>
-            <li class="Nav-item {% if route == 'register' %}is-active{% endif %}">
+            <li class="Nav-item {% if route == 'register' and 'register' in uri %}is-active{% endif %}">
                 <a href="{{ path("register") }}">Sign Up</a>
             </li>
       	{% endif %}
       	
       	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          	<li class="Nav-item {% if route == 'logout' %}is-active{% endif %}">
+          	<li class="Nav-item {% if route == 'logout' and 'logout' in uri %}is-active{% endif %}">
                 <a href="{{ path("logout") }}">Log Out</a>
             </li>
-            <li class="Nav-item {% if route == 'profile' %}is-active{% endif %}">
+            <li class="Nav-item {% if route == 'profile' and 'profile' in uri %}is-active{% endif %}">
                 <a href="{{ path("profile") }}">Profile</a>
             </li>            
       	{% endif %}
