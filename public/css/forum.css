@@ -1,0 +1,38 @@
+.card {
+    margin-bottom: 5px;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #CC8400;
+    border: 1px solid rgba(143, 21, 21, 0.671);
+    color: rgba(143, 21, 21, 0.671);
+    border-radius: .25rem .25rem 0 0;
+}
+
+#container i {
+    font-size: 2rem;
+    margin: auto 1rem auto 0;
+}
+
+.card h5 {
+    background-color: #CC8400;
+}
+
+.card-body:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#categories:nth-child(even) {}
+
+.card-body {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+}
+
+.card-body:last-of-type {
+    border: none;
+}

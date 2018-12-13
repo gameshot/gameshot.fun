@@ -2,23 +2,30 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="/css/.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/forum.css"/>
 {% endblock %}
 
-
-{% block title %} GAME SHOT{% endblock %}
+{% block title %}
+    GAME SHOT{% endblock %}
 
 {% block body %}
 
-    {% for key,category in topicList %}
+    {% for key, category in topicList %}
         <div class="card">
-            <h5 class="card-header">{{ key }}</h5>
-            {% for topic in category %}
-                <div class="card-body">
-                    <a href="/forum/{{ topic|lower }}" class="card-link">{{ topic }}</a>
-                </div>
-            {% endfor %}
+            <div id="container">
+                <h5 class="card-header">{{ key }}</h5>
+                <i class="fas toggleCategory fa-toggle-on"></i>
+            </div>
+            <article id="categories">
+                {% for topic in category %}
+                    <div class="card-body">
+                        <a href="/forum/{{ topic|lower }}" class="card-link">{{ topic }}</a>
+                    </div>
+                {% endfor %}
+            </article>
         </div>
     {% endfor %}
-
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="scripts/forum.js"></script>
 {% endblock %}
