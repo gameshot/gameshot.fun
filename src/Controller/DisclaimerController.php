@@ -4,7 +4,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-/* controler for disclaimer page JP */
+/* controller for disclaimer page JP */
 
 class DisclaimerController extends Controller
 {

@@ -4,7 +4,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-/* controler for about page JP */
+/* controller for about page JP */
 
 class AboutController extends Controller
 {
