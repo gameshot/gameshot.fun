@@ -5,9 +5,13 @@
     margin-bottom: 40px;
     padding-top: 50px;
     width: 900px;
-    border-radius: 50px;
+    border-radius: 55px;
     background-color: #8c8c8c;
     opacity: 0.95;
+}
+.card-img-top {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .card .card-body {
