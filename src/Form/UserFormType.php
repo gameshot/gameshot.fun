@@ -17,16 +17,32 @@ class UserFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
+                'username',
+                TextType::class,
+                array(
+                    'attr' => ['class' => 'username']
+                    )
+                )
+                
+                ->add(
+                'email',
+                EmailType::class,
+                array(
+                    'attr' => ['class' => 'email']
+                    )
+                )
+                
+                ->add(
                 'password', 
                 RepeatedType::class,
                 array(
                     'type' => PasswordType::class,
                     'invalid_message' => 'The password fields must match.',
-                    'first_options'  => array('label' => 'Password'),
-                    'second_options' => array('label' => 'Repeat Password'),
+                    'first_options'  => array('label' => 'Password', 'attr' => ['class' => 'password']),
+                    'second_options' => array('label' => 'Repeat Password', 'attr' => ['class' => 'password2']),
+                    
                     )
-                )->add('username', TextType::class)
-                ->add('email', EmailType::class);
+                );
                 
                 if($options['standalone']){
                     $builder->add('submit', SubmitType::class);

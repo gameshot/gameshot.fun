@@ -1,17 +1,26 @@
-body {
-    height: 100vh;
-}
 
 #user_form {
     margin: auto;
     width: 450px;
 }
 
-.navbar {
+form{
+	font-family: Cairo;
+	font-size: 1.2rem;
+}
 
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 98%;
-    bottom: 0;
+button{
+	font-family: Orbitron;
+}
+
+.invalid{
+	border: solid 2px red !important;
+}
+
+.invalid-username,
+.invalid-email,
+.invalid-password,
+.invalid-password2{
+	color: red;
+	font-size: 1rem;
 }
