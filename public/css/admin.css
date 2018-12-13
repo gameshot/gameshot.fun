@@ -1,0 +1,19 @@
+
+body {
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+}
+.card {
+    align-content: center;
+    margin: auto;
+    width: 550px;
+    font-family: 'cairo', sans-serif;
+}
+
+button {
+    align-content: center;
+}
