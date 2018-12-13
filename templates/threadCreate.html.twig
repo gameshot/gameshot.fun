@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="/css/.css" />
+{% endblock %}
+
+
+{% block title %} GAME SHOT{% endblock %}
+
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.thread.name) }}
+        {{ form_row(form.content) }}
+
+        {{ form_end(form) }}
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            You need to be logged in to access this page!!
+        </div>
+    {% endif %}
+{% endblock %}

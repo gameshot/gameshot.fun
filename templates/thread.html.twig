@@ -13,7 +13,9 @@
     <div class="card">
         <h5 class="card-header d-flex justify-content-between">
             <span>{{ threads[0].getTopic().getName() }}</span>
-            <span><button type="button" class="btn btn-dark">New thread</button></span>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <span><a href="{{ path('create_thread', { name : threads[0].getTopic().getName()|lower } ) }}" type="button" class="btn btn-dark">New thread</a></span>
+            {% endif %}
         </h5>
         {% for thread in threads %}
             <div class="card-body">
