@@ -11,7 +11,7 @@ class RoleController extends Controller
 
     /**
      *
-     * @Route("admin/user/role", name="user/role")
+     * @Route("/admin/user/role", name="user_role")
      *
      */
     public function role(){

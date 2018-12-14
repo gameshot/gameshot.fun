@@ -1,0 +1,21 @@
+/* Custom navbar background color JP */
+.navbar-custom {
+    background-color: #ff5500;
+}
+/* Change the brand and text color JP */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+    padding: 0.8rem 1rem;
+}
+/* Change the link color and padding height JP */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+    padding: 1rem 1rem;
+}
+/* Change the color for  hovered links JP */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: #ee4400;
+}

@@ -1,39 +1,15 @@
-{% extends 'base.html.twig' %}
+
+{% block adminnavbar %}
+    {% include 'user/AdminNavbar.html.twig' %}
+{% endblock %}
 {% block stylesheets %}
-    {{ parent() }}
     <link rel="stylesheet" type="text/css" href="/css/admin.css" />
 {% endblock %}
+
 
 {% block body %}
     <h2>Welcome to your admin page, !</h2>
 
-
-
-        <div class="card text-center">
-            <div class="card-header">Admin panel </div>
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text">User role attribution choice  </p>
-                <article class="profileInfo">
-
-                    <p id="profile-role" class="profile-name-card">Role:</p>
-                    <p id="profile-role" class="profile-name-card">role will be displayed here</p>
-
-                </article>
-                <div class="form-check-inline">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio" value="ROLE_ADMIN">Admin Role
-                    </label>
-                </div>
-                <div class="form-check-inline">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio" value="ROLE_USER">User Role
-                    </label>
-                </div>
-            </div>
-            <button type="submit"  class="btn btn-primary">Submit to apply role changes for this user </button>
-            <div class="card-footer text-muted"> -------------------------- </div>
-        </div>
 
 
 

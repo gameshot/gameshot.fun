@@ -1,4 +1,20 @@
+/* Body sizing and background color settings JP */
 body {
     height: 100vh;
-    background-color: #4f805d;
+    background-color: lightgrey;
 }
+
+/* Text positioning and font settings JP */
+h2 {
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Card sizing, alignment and font settings JP */
+.card {
+    align-content: center;
+    margin: auto;
+    width: 550px;
+    font-family: 'cairo', sans-serif;
+}
+
