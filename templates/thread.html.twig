@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block title %}
-    {{ threads[0].getTopic().getName() }}
+    {{ topic.getName() }}
 {% endblock %}
 
 {% block body %}
@@ -16,10 +16,10 @@
 
         <div id="container">
             <h5 class="card-header">
-                <span id="topicName">{{ threads[0].getTopic().getName() }}</span>
+                <span id="topicName">{{ topic.getName() }}</span>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <span>
-                        <a href="{{ path('create_thread', { name : threads[0].getTopic().getName()|lower } ) }}" type="button" class="btn btn-dark">New thread</a>
+                        <a href="{{ path('create_thread', { name : topic.getName()|lower } ) }}" type="button" class="btn btn-dark">New thread</a>
                     </span>
                 {% endif %}
             </h5>
@@ -28,7 +28,7 @@
             {% for thread in threads %}
                 <div class="card-body">
                     <i class="fas fa-comment"></i>
-                    <a href="/forum/{{ threads[0].getTopic().getLabel() }}/thread/{{ thread.getId() }}" class="card-link">{{ thread.getName()}}</a>
+                    <a href="/forum/{{ topic.getName()|lower }}/thread/{{ thread.getId() }}" class="card-link">{{ thread.getName()}}</a>
                 </div>
             {% endfor %}
         </div>

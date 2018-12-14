@@ -48,7 +48,8 @@ class ForumController extends Controller
         return $this->render(
             'thread.html.twig',
             [
-                'threads' => $threads
+                'threads' => $threads,
+                'topic' => $topic
             ]
         );
     }
