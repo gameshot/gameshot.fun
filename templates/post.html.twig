@@ -20,7 +20,7 @@
                 <img src="/assets/img/forum/default-user.png" alt="">
             </div>
             <div class="post">
-                <p>{{ post.getContent() }}</p>
+                <p>{{ post.getContent()|raw }}</p>
             </div>
         </div>
     {% endfor %}
@@ -37,4 +37,14 @@
             You need to be logged in to post messages!!
         </div>
     {% endif %}
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script src="/scripts/forum.js"></script>
+
+    <script>
+        CKEDITOR.replace('post_form_content', {
+            // remove Source button
+            removeButtons: 'Source'
+        });
+    </script>
 {% endblock %}

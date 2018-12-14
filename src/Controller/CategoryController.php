@@ -20,23 +20,32 @@ class CategoryController extends Controller
     /**
      * @Route("/admin/category/create", name="category_create")
      */
-    public function categoryCreate(Request $request) {
-        $category = new Category();
-        $form = $this->createForm(CategoryFormType::class, $category, ['standalone' => true]);
-        $form->handleRequest($request);
+    public function categoryCreate(Request $request)
+    {
+        if (!is_null($this->getUser())) {
+            if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
+                $category = new Category();
+                $form = $this->createForm(CategoryFormType::class, $category, ['standalone' => true]);
+                $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($category);
-            $manager->flush();
-            return $this->redirectToRoute('admin');
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $manager = $this->getDoctrine()->getManager();
+                    $manager->persist($category);
+                    $manager->flush();
+                    return $this->redirectToRoute('admin');
+                }
+
+                return $this->render(
+                    'Admin/CreateCategory.html.twig',
+                    [
+                        'form' => $form->createView()
+                    ]
+                );
+            } else {
+                return $this->redirectToRoute('homepage');
+            }
         }
+        return $this->redirectToRoute('homepage');
 
-        return $this->render(
-            'Admin/CreateCategory.html.twig',
-            [
-                'form' => $form->createView()
-            ]
-        );
     }
 }
