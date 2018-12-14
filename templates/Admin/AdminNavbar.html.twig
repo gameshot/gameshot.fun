@@ -9,16 +9,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/forum' }}">Forum</a>
+                    <a class="nav-link" href="{{ path('forum') }}">Forum</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/game' }}">Game</a>
+                    <a class="nav-link" href="{{ path('game') }}">Game</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/admin' }}">Forum Admin</a>
+                    <a class="nav-link" href="{{ path('admin') }}">Forum Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/admin/user/role' }}">User Role Admin</a>
+                    <a class="nav-link" href="{{ path('topic_create') }}">Add topic</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('category_create') }}">Add category</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

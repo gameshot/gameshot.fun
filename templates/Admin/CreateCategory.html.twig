@@ -1,0 +1,22 @@
+{% block adminnavbar %}
+    {% include 'Admin/AdminNavbar.html.twig' %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/css/admin.css" />
+{% endblock %}
+
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <h2>Welcome to your admin page, !</h2>
+
+        <div class="containe-fluid">
+            <h4>Keep the name & label as one word</h4>
+
+            {{ form(form) }}
+        </div>
+    {% else %}
+        <h2>Foxtrot Oscar!!!</h2>
+    {% endif %}
+
+{% endblock %}
