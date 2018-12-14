@@ -7,23 +7,25 @@
 {% endblock %}
 
 {% block title %}
-    GAME SHOT{% endblock %}
+    Forum Index
+{% endblock %}
 
 {% block body %}
 
     {% for key, category in topicList %}
         <div class="card">
+            <i class="fas toggleCategory fa-toggle-on" title="toggle category"></i>
             <div id="container">
                 <h5 class="card-header">{{ key }}</h5>
-                <i class="fas toggleCategory fa-toggle-on"></i>
             </div>
-            <article id="categories">
+            <div id="categories">
                 {% for topic in category %}
                     <div class="card-body">
+                        <i class="fa fa-comments"></i>
                         <a href="/forum/{{ topic|lower }}" class="card-link">{{ topic }}</a>
                     </div>
                 {% endfor %}
-            </article>
+            </div>
         </div>
     {% endfor %}
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

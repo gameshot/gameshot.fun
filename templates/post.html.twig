@@ -2,29 +2,34 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="/css/.css" />
+    <link rel="stylesheet" type="text/css" href="/css/forum.css"/>
 {% endblock %}
 
-
-{% block title %} GAME SHOT{% endblock %}
+{% block title %}
+    {{ posts[0].getThread().getName() }}
+{% endblock %}
 
 {% block body %}
 
     <h2>{{ posts[0].getThread().getName() }}</h2>
 
-    <div class="card">
-        {% for post in posts %}
-            <h6 class="card-header">{{ post.getUser().getUsername() }}</h6>
-            <div class="card-body">
+    {% for post in posts %}
+        <div class="postContainer">
+            <div class="user">
+                <p>{{ post.getUser().getUsername() }}</p>
+                <img src="/assets/img/forum/default-user.png" alt="">
+            </div>
+            <div class="post">
                 <p>{{ post.getContent() }}</p>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <div class="card">
             {{ form_start(form) }}
-                {{ form_row(form.content) }}
-                {% do form.thread.name.setRendered() %}
+            {{ form_row(form.content) }}
+            {% do 
+                form.thread.name.setRendered() %}
             {{ form_end(form) }}
         </div>
     {% else %}

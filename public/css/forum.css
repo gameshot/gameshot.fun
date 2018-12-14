@@ -1,5 +1,14 @@
+* {
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+}
+
 .card {
     margin-bottom: 5px;
+}
+
+.card:last-child {
+    margin-bottom: 500px;
 }
 
 #container {
@@ -12,27 +21,86 @@
     border-radius: .25rem .25rem 0 0;
 }
 
-#container i {
+.card>i {
+    position: absolute;
+    right: 0;
     font-size: 2rem;
-    margin: auto 1rem auto 0;
+    margin: 10px 1rem;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .card h5 {
-    background-color: #CC8400;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .card-body:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
-#categories:nth-child(even) {}
+.card-body:nth-child(odd):hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
-.card-body {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+.card-body:nth-child(even):hover {
+    background-color: rgba(0, 0, 0, 0.035);
+}
+
+.card-body>i {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    margin-right: 1rem;
+    background-color: lightgray;
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.card-body a {
     font-family: 'Cairo', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #CC8400;
 }
 
 .card-body:last-of-type {
     border: none;
+}
+
+/*
+    THREAD-TEMPLATE
+*/
+
+.card-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#topicName {
+    margin: auto 0;
+}
+
+/*
+    POST-TEMPLATE
+*/
+.postContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.postContainer>.user {
+    margin: auto;
+    text-align-last: center;
+    width: 20%;
+}
+
+.postContainer>.post {
+    margin: auto;
+    width: 80%;
 }
