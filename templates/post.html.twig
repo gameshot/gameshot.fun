@@ -20,7 +20,7 @@
                 <img src="/assets/img/forum/default-user.png" alt="">
             </div>
             <div class="post">
-                <p>{{ post.getContent() }}</p>
+                <p>{{ post.getContent()|raw }}</p>
             </div>
         </div>
     {% endfor %}
