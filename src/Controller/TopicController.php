@@ -21,22 +21,29 @@ class TopicController extends Controller
      * @Route("/admin/topic/create", name="topic_create")
      */
     public function topicCreate(Request $request) {
-        $topic = new Topic();
-        $form = $this->createForm(TopicFormType::class, $topic, ['standalone' => true]);
-        $form->handleRequest($request);
+        if (!is_null($this->getUser())) {
+            if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
+                $topic = new Topic();
+                $form = $this->createForm(TopicFormType::class, $topic, ['standalone' => true]);
+                $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($topic);
-            $manager->flush();
-            return $this->redirectToRoute('admin');
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $manager = $this->getDoctrine()->getManager();
+                    $manager->persist($topic);
+                    $manager->flush();
+                    return $this->redirectToRoute('admin');
+                }
+
+                return $this->render(
+                    'Admin/CreateTopic.html.twig',
+                    [
+                        'form' => $form->createView()
+                    ]
+                );
+            } else {
+                return $this->redirectToRoute('homepage');
+            }
         }
-
-        return $this->render(
-            'Admin/CreateTopic.html.twig',
-            [
-                'form' => $form->createView()
-            ]
-        );
+        return $this->redirectToRoute('homepage');
     }
 }
