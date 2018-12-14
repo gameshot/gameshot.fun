@@ -11,15 +11,11 @@ namespace App\Controller;
 use App\Entity\Post;
 use App\Entity\Thread;
 use App\Entity\Topic;
-use App\Entity\User;
 use App\Form\PostFormType;
-use App\Form\ThreadFormType;
-use App\Repository\TopicRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
 
 class ThreadController extends Controller
 {
@@ -28,8 +24,8 @@ class ThreadController extends Controller
      * @Route("/forum/{name}/thread=create", name="create_thread")
      *
      */
-    public function createThread(Request $request, Session $session, Topic $topic) {
-
+    public function createThread(Request $request, Session $session, Topic $topic)
+    {
         $thread = new Thread();
         $post = new Post();
         $date = new \DateTime();
