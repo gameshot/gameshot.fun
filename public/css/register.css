@@ -1,22 +1,39 @@
-
-#user_form {
-    margin: auto;
-    width: 450px;
+/* Body background and sizing settings JP */
+body {
+	height: 100vh;
+	background-color: lightgrey;
 }
 
+/* Form font and size settings JP */
 form{
 	font-family: Cairo;
 	font-size: 1.2rem;
 }
 
+/* Submit button font settings JP */
 button{
 	font-family: Orbitron;
 }
+ /* Footer fixed position att bottom JP */
+footer {
+	position: fixed;
+	height: 100px;
+	bottom: 0;
+	width: 100%;
+}
 
+/* User form sizing and margin settings JP */
+#user_form {
+	margin: auto;
+	width: 450px;
+}
+
+/* Form validation settings JP */
 .invalid{
 	border: solid 2px red !important;
 }
 
+/* Form validation settings JP */
 .invalid-username,
 .invalid-email,
 .invalid-password,

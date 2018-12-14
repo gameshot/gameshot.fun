@@ -1,15 +1,18 @@
+/* Header positioning and padding JP */
 body {
     margin: 0;
     padding: 0;
 }
+
+/* Header text positioning, font, font color and shadow settings JP */
 .main-header {
     text-align: center;
     color: black;
     font-family: 'Orbitron', sans-serif;
     text-shadow: 1px 1px #ff0000;
-
 }
 
+/* Header top positional padding settings JP */
 .main-header, h1 {
     padding-top: 1rem;
 }

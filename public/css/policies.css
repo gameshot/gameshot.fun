@@ -1,4 +1,7 @@
-
+/* Body sizing and background color settings JP */
+body {
+    background-color: lightgrey;
+}
 /* jumbotron properties as background color and opacity JP */
 .jumbotron {
     margin: auto;
@@ -7,7 +10,6 @@
     border-radius: 50px;
     background-color: #8c8c8c;
     opacity: 0.95;
-
  }
 
 /* Bootstrap container text alignment and color JP */

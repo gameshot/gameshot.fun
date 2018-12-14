@@ -1,19 +1,23 @@
+/* Body sizing and background color settings JP */
 body {
-    height: 100%;
+    height: 100vh;
+    background-color: lightgrey;
 }
-/* login card sizing JP */
+
+/* Login card sizing JP */
 .card-container.card {
     border-radius: 25px;
     max-width: 350px;
     padding: 40px 40px;
 }
-/* login button font JP */
+
+/* Login button font JP */
 .btn {
     background-color: #CC8400;
     font-family: 'orbitron', sans-serif;
 }
 
-/* card properties JP */
+/* Card properties JP */
 .card {
     background-color: #F7F7F7;
     padding: 20px 25px 30px;
@@ -27,7 +31,8 @@ body {
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-/* image sizing and shape JP */
+
+/* Image sizing and shape JP */
 .profile-img-card {
     display: block;
     width: 200px;
@@ -35,7 +40,8 @@ body {
     margin: 10px auto 10px;
 
 }
-/* imput filds font type JP */
+
+/* Input fields font type JP */
 [ type="text"],[type="password" ] {
     font-family: 'Cairo', sans-serif;
 }

@@ -1,5 +1,9 @@
+/* Body background and sizing settings JP */
+body {
+    background-color: lightgrey;
+}
 
-/* card properties as background color and opacity JP */
+/* Card sizing, margin, padding and background color settings JP */
 .card {
     margin: auto;
     margin-bottom: 40px;
@@ -7,23 +11,26 @@
     width: 900px;
     border-radius: 55px;
     background-color: #8c8c8c;
-    opacity: 0.95;
 }
+
+/* Card photo padding settings JP */
 .card-img-top {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
+/* Card text settings JP */
 .card .card-body {
     text-align: center;
 }
 
+/* Card heading text font settings JP */
 .card .card-body h1 {
     font-family: 'orbitron', sans-serif;
 }
 
+/* Card paragraph text font and color settings JP */
 .card .card-body p {
-
+    color: whitesmoke;
     font-family: 'Cairo', sans-serif;
-
 }

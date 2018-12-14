@@ -1,9 +1,4 @@
-
-
-body {
-    background-color: lightgrey;
-}
-
+/* Body and heading font settings JP */
 body, h2 {
     font-family: 'orbitron', sans-serif;
 }

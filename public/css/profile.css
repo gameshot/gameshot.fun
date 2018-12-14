@@ -1,6 +1,9 @@
+/* Body sizing and background color settings JP */
 body {
-    height: 100%;
+    height: 100vh;
+    background-color: lightgrey;
 }
+
 
 .card-container.card {
     border-radius: 25px;

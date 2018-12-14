@@ -1,73 +1,74 @@
-html {
-    scroll-behavior: smooth;
+/* Body background color settings JP */
+body {
+    background-color: lightgray;
 }
 
-h2 {
+/* Smooth scroll up for game play when clicking on submit button JP */
+html {
+    scroll-behavior: smooth; /* js smooth scroll function in gamescroll.js JP */
+}
+
+/* Headings and label text positioning and font settings JP */
+h2,
+label {
     text-align: center;
     font-family: 'Cairo', sans-serif;
 }
 
+/* Submit form bottom padding JP*/
 form {
     padding-bottom: 20px;
 }
 
-label {
-    font-family: 'Cairo', sans-serif;
-}
-
-/* game sizing confirmation and positioning */
+/* Game/phaser window sizing and positioning JP */
 #phaser {
     width: 800px;
     margin: auto;
 }
 
+/* Objects amount text settings */
 #itemsAmount {
     font-family: 'Cairo', sans-serif;
-
 }
 
+/* Game background options sizing and border settings JP */
 .backgrounds{
     width: 100px;
     height: 100px;
     border-radius: 50px;
 }
 
+/* Player selection settings JP */
+.player {
+    background-color: whitesmoke;
+    border-radius: 50px;
+}
 
+/* Platforn selection settings JP */
+.platform {
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+/* Colliding objects settings JP */
+.objects {
+    height: 35px;
+    width: 35px;
+}
+
+/* First jumbotron top padding settings for distancing from game/phaser  to allow screen centering JP */
+/* First jumbotron sizing, spacing, position and background settings JP */
 .jumbotron_1 {
     width: 800px;
     margin: auto;
     margin-bottom: 4px;
+    border-radius: 5px;
+    background-color: whitesmoke;
     margin-top: 5rem;
-    border-radius: 5px;
-    background-color: whitesmoke;
 }
 
-.jumbotron_2 {
-    width: 800px;
-    margin: auto;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    background-color: #CC8400;
-}
-
-.jumbotron_3 {
-    width: 800px;
-    margin: auto;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    background-color: whitesmoke;
-}
-
-
-.jumbotron_4 {
-    width: 800px;
-    margin: auto;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    background-color: #CC8400;
-}
-
-
+/* Multiple jumbotron sizing, spacing, position and background settings JP */
+.jumbotron_3,
 .jumbotron_5 {
     width: 800px;
     margin: auto;
@@ -76,7 +77,9 @@ label {
     background-color: whitesmoke;
 }
 
-
+/* Multiple jumbotron sizing, spacing, position and background settings JP */
+.jumbotron_2,
+.jumbotron_4,
 .jumbotron_6 {
     width: 800px;
     margin: auto;
@@ -85,6 +88,7 @@ label {
     background-color: #CC8400;
 }
 
+/* Submit jumbotron sizing, spacing, position and background settings JP */
 .jumbotron_7 {
     width: 800px;
     margin: auto;
@@ -95,25 +99,12 @@ label {
     padding-bottom: 1rem;
 }
 
+/* Submit button background, text position, sizing and margin settings JP */
 .jumbotron_7 button  {
-    background-color: #CC8400;
-    text-align: center;
     width: 290px;
     margin: auto;
+    background-color: #CC8400;
+    text-align: center;
 }
 
-.player {
-    background-color: whitesmoke;
-    border-radius: 50px;
-}
-
-.platform {
-    padding: 0.5rem;
-    border-radius: 20px;
-}
-
-.objects {
-    height: 35px;
-    width: 35px;
-}
 
