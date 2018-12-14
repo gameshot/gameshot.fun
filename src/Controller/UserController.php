@@ -19,7 +19,7 @@ class UserController extends Controller
      *@Route("/register", name="register")
      * 
      */
-    public function register(Request $request, EncoderFactoryInterface $encoderFactory, TokenStorageInterface $tokenStorage)
+    public function register(Request $request, EncoderFactoryInterface $encoderFactory, TokenStorageInterface $tokenStorage, \Swift_Mailer $mailer)
     {
         $user = new User();
         $form = $this->createForm(UserFormType::class, $user, ['standalone' => true]);
@@ -39,13 +39,17 @@ class UserController extends Controller
             $user->addRole(
                 $this->getDoctrine()->getRepository(Role::class)->findOneByLabel('ROLE_USER')
                 );
-            
-            
+
+            $message = (new \Swift_Message('Hello Email'))
+                ->setFrom('gameshot.fun@gmail.com')
+                ->setTo($user->getEmail())
+                ->setBody('Test');
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
             
             $tokenStorage->setToken( new UsernamePasswordToken($user, null, 'main', $user->getRoles()));
+            $mailer->send($message);
             return $this->redirectToRoute('homepage');
         }
         return $this->render('User/Register.html.twig', ['formObj' => $form->createView()]);

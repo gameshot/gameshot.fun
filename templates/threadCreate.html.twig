@@ -9,15 +9,6 @@
 {% block title %} GAME SHOT{% endblock %}
 
 {% block body %}
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-describedby="basic-addon2" id="gameSearch">
-        <div class="input-group-append">
-            <button type="button" class="btn btn-default" id="gameSearchButton">
-                Search
-            </button>
-        </div>
-        <ul id="gameResults"></ul>
-    </div>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         {{ form_start(form) }}
         {{ form_errors(form) }}
@@ -35,5 +26,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="/js/gameSearch.js"></script>
+    <script src="/js/test.js"></script>
 {% endblock %}
