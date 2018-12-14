@@ -1,3 +1,7 @@
+body {
+    height: 100vh;
+}
+
 * {
     box-sizing: border-box;
     transition-duration: 0.3s;
@@ -44,6 +48,7 @@
 .card-body:nth-child(even):hover {
     background-color: rgba(0, 0, 0, 0.035);
 }
+
 
 .card-body>i {
     font-size: 1.2rem;
@@ -92,6 +97,11 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
+}
+
+.postContainer:first-of-type {
+    border: 2px solid #CC8400;
+    background-color: rgb(230, 230, 230);
 }
 
 .postContainer>.user {
