@@ -24,6 +24,7 @@ form {
 #phaser {
     width: 800px;
     margin: auto;
+    margin-bottom: 10px;
 }
 
 /* Objects amount text settings */
@@ -107,4 +108,9 @@ form {
     text-align: center;
 }
 
+#restartButton {
+    display: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
 

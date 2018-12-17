@@ -1,5 +1,6 @@
 //Get the form to test it on submit
 let form = document.querySelector('form');
+let restart = document.getElementById('restartButton');
 
 //The information we get from the form in order to add them to the game
 let playerImg;
@@ -11,8 +12,15 @@ let enemyImg;
 //Event listener on submit for the form
 form.addEventListener('submit', checkForm);
 
+restart.addEventListener('click', function () {
+   window.location.reload();
+});
+
+
 //Function to be launched on form submitting
 function checkForm(e) {
+    form.style.display = "none";
+    restart.style.display = "inherit";
     //Remove the first canvas created if any field modification
     if (document.querySelector('canvas') !== null) {
         document.querySelector('canvas').remove();

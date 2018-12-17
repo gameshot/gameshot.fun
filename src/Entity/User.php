@@ -27,12 +27,24 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank
+     *  @Assert\Length(
+     *      min = 5,
+     *      max = 50,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      */  
     private $username;
     
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     *  @Assert\Length(
+     *      min = 8,
+     *      max = 50,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      */    
     private $password;
     
@@ -51,6 +63,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="boolean")
+     *
      */
     private $verified;
 
