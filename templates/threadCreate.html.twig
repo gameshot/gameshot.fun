@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <!-- <link rel="stylesheet" type="text/css" href="/css/.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/forum.css" />
 {% endblock %}
 
 
@@ -10,6 +10,16 @@
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div>
+            <form class="form-inline" id="search">
+                <input class="form-control" type="search" id="gameSearch" aria-label="Search">
+                <button class="btn btn-outline-success" id="buttonSearch">Search</button>
+                <button class="btn btn-outline-danger" id="closeSearch">X</button>
+            </form>
+            <ul id="searchResult">
+
+            </ul>
+        </div>
         {{ form_start(form) }}
         {{ form_errors(form) }}
 
@@ -18,10 +28,11 @@
 
         {{ form_end(form) }}
     {% else %}
-
+        <p>You cannot access this page!</p>
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="/js/test.js"></script>
+    <script src="/js/gameSearch.js"></script>
 {% endblock %}

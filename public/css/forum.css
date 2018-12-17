@@ -114,3 +114,20 @@ body {
     margin: auto;
     width: 80%;
 }
+
+#gameSearch {
+    position: relative;
+}
+
+#searchResult {
+    display: none;
+    padding: 5px;
+    background-color: white;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+}
+
+#closeSearch {
+    display: none;
+}
