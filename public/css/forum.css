@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    background-color: lightgray;
 }
 
 * {
@@ -114,6 +115,7 @@ li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-family: 'Cairo', sans-serif;
     font-size: 1rem;
+    cursor: copy;
 }
 
 #closeSearch {

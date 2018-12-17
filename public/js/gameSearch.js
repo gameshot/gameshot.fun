@@ -16,7 +16,7 @@ searchButton.addEventListener('click', function (e) {
             let gameInfo = JSON.parse(this.responseText);
             gameInfo.forEach(function (element) {
                 result.style.display = 'initial';
-                result.innerHTML += '<li>' + element.name + '</li>';
+                result.innerHTML += '<li id="resultList" Title="replace your thread name">' + element.name + '</li>';
             });
         }
     });
@@ -35,8 +35,10 @@ closeButton.addEventListener('click', function (e) {
     result.style.display = 'none';
 });
 
-searchResult.addEventListener('click', function (e) {
-    console.log(this.innerHTML);
-    let title = document.getElementById('post_form_thread_name');
-    title.innerHTML = this.innerHTML;
+document.body.addEventListener('click', function (e) {
+    if (event.srcElement.id == 'resultList') { //do something}
+        console.log(event.srcElement.textContent);
+        let title = document.getElementById('post_form_thread_name');
+        title.value = event.srcElement.textContent;
+    };
 });
