@@ -1,19 +1,18 @@
-
 @import url("https://fonts.googleapis.com/css?family=Orbitron");
+
 /* Variables */
 h1 {
   font-family: 'Orbitron', sans-serif;
-  color: #CC8400;
+  color: rgba(255, 0, 0, 0.8);
   font-size: 5em;
   font-weight: 300;
   text-align: center;
-  margin: 100px 10px 0 10px;
 }
 
 body {
   background: #c8c8c8;
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   overflow-y: hidden;
   background-image: radial-gradient(circle, rgba(255, 255, 0, 0.5), orange 325px, rgba(255, 0, 0, 0.8));
 }
@@ -173,4 +172,5 @@ section {
   background-position: center;
   background-size: 100%;
 }
+
 /*# sourceMappingURL=style.css.map */

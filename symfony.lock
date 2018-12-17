@@ -89,56 +89,29 @@
     "egulias/email-validator": {
         "version": "2.1.7"
     },
+    "exercise/htmlpurifier-bundle": {
+        "version": "0.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.2",
+            "ref": "0b76657841c2ba52647bb1b4a5595a0e3b9f485c"
+        }
+    },
+    "ezyang/htmlpurifier": {
+        "version": "v4.10.0"
+    },
     "facebook/webdriver": {
         "version": "1.6.0"
     },
     "fig/link-util": {
         "version": "1.0.0"
     },
-    "firebase/php-jwt": {
-        "version": "v5.0.0"
-    },
-    "google/apiclient": {
-        "version": "2.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "2.0",
-            "ref": "49c5d7a66d863d28513979bf0666dc77599100c0"
-        }
-    },
-    "google/apiclient-services": {
-        "version": "v0.77"
-    },
-    "google/auth": {
-        "version": "v1.4.0"
-    },
-    "guzzlehttp/guzzle": {
-        "version": "6.3.3"
-    },
-    "guzzlehttp/promises": {
-        "version": "v1.3.1"
-    },
-    "guzzlehttp/psr7": {
-        "version": "1.5.2"
-    },
-    "igdb/api": {
-        "version": "dev-master"
-    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
     "monolog/monolog": {
         "version": "1.24.0"
-    },
-    "nelmio/cors-bundle": {
-        "version": "1.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.5",
-            "ref": "f0436fc35fca88eada758311f8de43bfb61f1980"
-        }
     },
     "nikic/php-parser": {
         "version": "v4.1.0"
@@ -158,17 +131,11 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
-    "phpseclib/phpseclib": {
-        "version": "2.0.12"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.0.0"
-    },
-    "psr/http-message": {
-        "version": "1.0.1"
     },
     "psr/link": {
         "version": "1.0.0"
@@ -178,9 +145,6 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
-    },
-    "ralouphie/getallheaders": {
-        "version": "2.0.5"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",

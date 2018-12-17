@@ -12,6 +12,9 @@ use App\Entity\Post;
 use App\Entity\Thread;
 use App\Entity\Topic;
 use App\Form\PostFormType;
+use EN\IgdbApiBundle\Igdb\IgdbWrapperInterface;
+use EN\IgdbApiBundle\Igdb\Parameter\ParameterBuilderInterface;
+use EN\IgdbApiBundle\Igdb\ValidEndpoints;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -32,7 +35,6 @@ class ThreadController extends Controller
         $date->format('Y-m-d H:i:s');
         $thread->setDate($date);
         $post->setDate($date);
-
         $form = $this->createForm(PostFormType::class, $post, ['standalone' => true]);
         $form->handleRequest($request);
 

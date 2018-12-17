@@ -16,3 +16,12 @@ body {
 .main-header, h1 {
     padding-top: 1rem;
 }
+
+a[href="/"] {
+    text-decoration: none;
+    color: black;
+}
+
+a[href="/"]:hover {
+    color: #CC8400;
+}

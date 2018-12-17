@@ -14,7 +14,7 @@ class PostFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('thread', ThreadFormType::class)
-            ->add('content', TextareaType::class);
+            ->add('content', TextareaType::class, ['purify_html' => true]);
         if($options['standalone']){
             $builder->add('submit', SubmitType::class);
         }

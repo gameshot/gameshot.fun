@@ -23,16 +23,33 @@
     		</article>
     		<br>
     		<article class="profileInfo">
-    			<p id="profile-email" class="profile-name-card">Email::</p>	
+    			<p id="profile-email" class="profile-name-card">Email:</p>
     			<p id="profile-email" class="profile-name-card">{{ app.user.email }}</p>		
     		</article>
-    			<br>
+			<br>
     		<article class="profileInfo">
                 {% for role in app.user.roles %}
                 	<p id="profile-role" class="profile-name-card">Role:</p>            
-                	<p id="profile-role" class="profile-name-card">{{ role }}</p>
+                	<p id="profile-role" class="profile-name-card">
+						{% if role == 'ROLE_USER' %}
+							member
+						{% elseif role == 'ROLE_ADMIN' %}
+							admin
+						{% endif %}
+					</p>
                 {% endfor %}			
     		</article>
+			<br>
+			<article class="profileInfo">
+				<p id="profile-email" class="profile-name-card">Email verified?</p>
+				<p id="profile-email" class="profile-name-card">
+					{% if app.user.verified %}
+						verified
+					{% else %}
+						not verified
+					{% endif %}
+				</p>
+			</article>
     	</div>
     </div>
 {% endif %}

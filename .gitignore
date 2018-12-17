@@ -5,6 +5,7 @@
 /public/bundles/
 /var/
 /vendor/
+symfony.lock
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -17,5 +18,3 @@
 ###< symfony/web-server-bundle ###
 
 .idea
-
-+/composer.lock
