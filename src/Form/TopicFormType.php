@@ -16,7 +16,6 @@ class TopicFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', TextType::class)
-            ->add('label', TextType::class)
             ->add('category', EntityType::class,
                 [
                     'class' => Category::class,

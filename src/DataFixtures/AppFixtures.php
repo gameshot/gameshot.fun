@@ -16,10 +16,10 @@ use App\Entity\Topic;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 
 class AppFixtures extends Fixture
 {
+
     public function load(ObjectManager $manager)
     {
         $this->loadAll($manager);
@@ -67,21 +67,19 @@ class AppFixtures extends Fixture
 
         $user = new User();
         $user->setRoles($role);
-        $user->setPassword('admin');
         $user->setUsername('admin');
         $user->setEmail('admin@admin.admin');
         $user->setSalt(md5($user->getUsername()));
+        $user->setPassword('admin');
         $user->setVerified(true);
 
         foreach ($categoryList as $categoryName) {
             $category = new Category();
             $category->setName($categoryName);
-            $category->setLabel(strtolower($categoryName));
             foreach ($topicList as $topicName)
             {
                 $topic = new Topic();
                 $topic->setName($topicName);
-                $topic->setLabel(strtolower($topicName));
                 $category->addTopic($topic);
                 foreach ($threadList as $threadName) {
                     $thread = new Thread();

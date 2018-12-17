@@ -24,7 +24,7 @@
             </div>
         </div>
     {% endfor %}
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.verified %}
         <div class="card">
             {{ form_start(form) }}
             {{ form_row(form.content) }}
@@ -34,7 +34,7 @@
         </div>
     {% else %}
         <div class="alert alert-warning" role="alert">
-            You need to be logged in to post messages!!
+            You need to be logged in or verified (check your mails) to post messages!!
         </div>
     {% endif %}
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
