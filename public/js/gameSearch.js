@@ -16,7 +16,7 @@ searchButton.addEventListener('click', function (e) {
             let gameInfo = JSON.parse(this.responseText);
             gameInfo.forEach(function (element) {
                 result.style.display = 'initial';
-                result.innerHTML += "<li>" + element.name + "</li>";
+                result.innerHTML += '<li>' + element.name + '</li>';
             });
         }
     });
@@ -33,4 +33,10 @@ closeButton.addEventListener('click', function (e) {
     closeButton.style.display = 'none';
     result.innerText = '';
     result.style.display = 'none';
+});
+
+searchResult.addEventListener('click', function (e) {
+    console.log(this.innerHTML);
+    let title = document.getElementById('post_form_thread_name');
+    title.innerHTML = this.innerHTML;
 });

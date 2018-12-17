@@ -79,8 +79,45 @@ body {
     justify-content: space-between;
 }
 
+/*
+    CREATE-THREAD-TEMPLATE
+*/
+#search {
+    justify-content: flex-end;
+}
+
 #topicName {
     margin: auto 0;
+}
+
+#gameSearch {
+    position: relative;
+}
+
+#searchResult {
+    display: none;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    height: 150px;
+    overflow: auto;
+    background-color: white;
+    border: 1px solid #CC8400;
+    border-radius: .25rem;
+    position: absolute;
+    right: 15px;
+    z-index: 1;
+}
+
+li {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+}
+
+#closeSearch {
+    display: none;
 }
 
 /*
@@ -113,21 +150,4 @@ body {
 .postContainer>.post {
     margin: auto;
     width: 80%;
-}
-
-#gameSearch {
-    position: relative;
-}
-
-#searchResult {
-    display: none;
-    padding: 5px;
-    background-color: white;
-    margin: 0;
-    list-style: none;
-    position: absolute;
-}
-
-#closeSearch {
-    display: none;
 }

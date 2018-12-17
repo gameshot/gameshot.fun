@@ -2,11 +2,11 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="/css/forum.css" />
+    <link rel="stylesheet" type="text/css" href="/css/forum.css"/>
 {% endblock %}
 
-
-{% block title %} GAME SHOT{% endblock %}
+{% block title %}
+    GAME SHOT{% endblock %}
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -16,9 +16,7 @@
                 <button class="btn btn-outline-success" id="buttonSearch">Search</button>
                 <button class="btn btn-outline-danger" id="closeSearch">X</button>
             </form>
-            <ul id="searchResult">
-
-            </ul>
+            <ul id="searchResult"></ul>
         </div>
         {{ form_start(form) }}
         {{ form_errors(form) }}
@@ -34,5 +32,13 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+        CKEDITOR.replace('post_form_content', {
+            // remove Source button
+            removeButtons: 'Source'
+        });
+    </script>
     <script src="/js/gameSearch.js"></script>
 {% endblock %}
