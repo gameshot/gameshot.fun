@@ -26,12 +26,6 @@ class Topic
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     */
-    private $label;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="topics")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -60,17 +54,6 @@ class Topic
     public function setName(string $name): self
     {
         $this->name = $name;
-        return $this;
-    }
-
-    public function getLabel(): ?string
-    {
-        return $this->label;
-    }
-
-    public function setLabel(string $label): self
-    {
-        $this->label = $label;
         return $this;
     }
 

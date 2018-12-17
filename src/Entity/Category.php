@@ -26,12 +26,6 @@ class Category
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     */
-    private $label;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Topic", mappedBy="category")
      */
     private $topics;
@@ -54,18 +48,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getLabel(): ?string
-    {
-        return $this->label;
-    }
-
-    public function setLabel(string $label): self
-    {
-        $this->label = $label;
 
         return $this;
     }
