@@ -202,6 +202,7 @@ function checkForm(e) {
     window.addEventListener("resize", resize, false);
 
     function resize() {
+        let div = document.getElementById("phaser");
         let canvas = document.querySelector("canvas");
         let windowWidth = window.innerWidth-20;
         let windowHeight = window.innerHeight-150;
@@ -210,10 +211,14 @@ function checkForm(e) {
         if(windowRatio < gameRatio){
             canvas.style.width = windowWidth + "px";
             canvas.style.height = (windowWidth / gameRatio) + "px";
+            div.style.width = windowWidth + "px";
+            div.style.height = (windowWidth / gameRatio) + "px";
         }
         else{
             canvas.style.width = (windowHeight * gameRatio) + "px";
             canvas.style.height = windowHeight + "px";
+            div.style.width = (windowHeight * gameRatio) + "px";
+            div.style.height = windowHeight + "px";
         }
     }
 
