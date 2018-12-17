@@ -73,7 +73,7 @@ class ForumController extends Controller
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($post);
             $manager->flush();
-            return $this->redirect('/forum/' . $thread->getTopic()->getLabel() . '/thread/' . $thread->getId());
+            return $this->redirect('/forum/' . strtolower($thread->getTopic()->getName()) . '/thread/' . $thread->getId());
         }
 
         $posts = $manager->getRepository(Post::class)->findByThread($thread);
