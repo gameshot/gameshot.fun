@@ -16,6 +16,7 @@ use App\Entity\Topic;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 
 class AppFixtures extends Fixture
 {
@@ -70,6 +71,7 @@ class AppFixtures extends Fixture
         $user->setUsername('admin');
         $user->setEmail('admin@admin.admin');
         $user->setSalt(md5($user->getUsername()));
+        $user->setVerified(true);
 
         foreach ($categoryList as $categoryName) {
             $category = new Category();

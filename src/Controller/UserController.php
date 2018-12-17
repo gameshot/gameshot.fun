@@ -35,18 +35,27 @@ class UserController extends Controller
                 $user->getSalt()
                 );
             $user->setPassword($password);
+            $user->setVerified(false);
             
             $user->addRole(
                 $this->getDoctrine()->getRepository(Role::class)->findOneByLabel('ROLE_USER')
                 );
-
-            $message = (new \Swift_Message('Hello Email'))
-                ->setFrom('gameshot.fun@gmail.com')
-                ->setTo($user->getEmail())
-                ->setBody('Test');
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
+            $verificationUrl = 'http://localhost/verification/user=' . $user->getId();
+            $message = (new \Swift_Message('Hello Email'))
+                ->setFrom('gameshot.fun@gmail.com')
+                ->setTo($user->getEmail())
+                ->setBody(
+                    '<html>' .
+                    '<head></head>' .
+                    '<body>' .
+                    '<p>To verify your email address, click on the link below:</p>' .
+                    '<a href="'. $verificationUrl .'">Verify email</a>'.
+                    '</body>' .
+                    '</html>',
+                    'text/html');
             
             $tokenStorage->setToken( new UsernamePasswordToken($user, null, 'main', $user->getRoles()));
             $mailer->send($message);

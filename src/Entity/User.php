@@ -48,7 +48,12 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $salt;
-    
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $verified;
+
     /**
      * @ORM\ManyToMany(targetEntity="Role")
      * @ORM\JoinTable(name="users_roles",
@@ -71,6 +76,23 @@ class User implements UserInterface
     public function __construct()
     {
         $this->roles = new ArrayCollection();
+    }
+
+    /**
+     * @return ?bool
+     */
+    public function getVerified() : ?bool
+    {
+        return $this->verified;
+    }
+
+    /**
+     * @param bool $verified
+     */
+    public function setVerified(bool $verified): self
+    {
+        $this->verified = $verified;
+        return $this;
     }
 
     public function getId()
