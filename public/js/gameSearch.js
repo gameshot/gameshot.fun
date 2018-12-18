@@ -35,9 +35,9 @@ closeButton.addEventListener('click', function (e) {
     result.style.display = 'none';
 });
 
+// on click replace the thread title with the clicked research
 document.body.addEventListener('click', function (e) {
-    if (event.srcElement.id == 'resultList') { //do something}
-        console.log(event.srcElement.textContent);
+    if (event.srcElement.id == 'resultList') {
         let title = document.getElementById('post_form_thread_name');
         title.value = event.srcElement.textContent;
     };

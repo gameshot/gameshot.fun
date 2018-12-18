@@ -19,13 +19,15 @@
                 <p>{{ post.getUser().getUsername() }}</p>
                 <img src="/assets/img/forum/default-user.png" alt="">
             </div>
+            <hr>
             <div class="post">
                 <p>{{ post.getContent()|raw }}</p>
             </div>
         </div>
     {% endfor %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.verified %}
-        <div class="card">
+        <div class="postMe">
+            <h4>New Post</h4>
             {{ form_start(form) }}
             {{ form_row(form.content) }}
             {% do 
