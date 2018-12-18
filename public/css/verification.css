@@ -1,0 +1,12 @@
+.card-body {
+    text-align: center;
+}
+
+.card {
+    margin: auto;
+}
+
+.progress {
+    width: 60%;
+    margin: 60px auto;
+}
