@@ -10,34 +10,35 @@
 {% block title %} GAME SHOT{% endblock %}
 
 {% block body %}
-<h2>Welcome to your profile page, {{ app.user.username }}!</h2>
+
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <div class="container">
-    	<div class="card card-container">
+    <div class="container-main">
+		<div class="card card-container">
+			<h2>Welcome to your profile page, {{ app.user.username }}!</h2>
     		<img id="profile-img" class="profile-img-card" src="/assets/img/ninja.png" />
     		<hr>
     		<article class="profileInfo">
-    			<p id="profile-name" class="profile-name-card">Username:</p>	
-    			<p id="profile-name" class="profile-name-card">{{ app.user.username }}</p>		
+    			<p id="profile-name" class="profile-name-card">Username:</p>
+    			<p id="profile-name" class="profile-name-card">{{ app.user.username }}</p>
     		</article>
     		<br>
     		<article class="profileInfo">
     			<p id="profile-email" class="profile-name-card">Email:</p>
-    			<p id="profile-email" class="profile-name-card">{{ app.user.email }}</p>		
+    			<p id="profile-email" class="profile-name-card">{{ app.user.email }}</p>
     		</article>
 			<br>
     		<article class="profileInfo">
                 {% for role in app.user.roles %}
-                	<p id="profile-role" class="profile-name-card">Role:</p>            
+                	<p id="profile-role" class="profile-name-card">Role:</p>
                 	<p id="profile-role" class="profile-name-card">
 						{% if role == 'ROLE_USER' %}
 							member
 						{% elseif role == 'ROLE_ADMIN' %}
-							admin
+							<a href="{{ path('admin') }}">admin</a> <!-- Link to admin page. -->
 						{% endif %}
 					</p>
-                {% endfor %}			
+                {% endfor %}
     		</article>
 			<br>
 			<article class="profileInfo">
