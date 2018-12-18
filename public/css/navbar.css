@@ -38,6 +38,10 @@
 }
 
 /**/
+#navbar.is-active {
+  display: none;
+}
+
 .hamburger {
   margin-top: 30px;
   width: 50px;
@@ -79,10 +83,6 @@
   transform: translate(14px, 4px) rotate(45deg);
   width: 28px;
   transform-origin: bottom right;
-}
-
-#navbar.is-active {
-  display: none;
 }
 
 /**/
