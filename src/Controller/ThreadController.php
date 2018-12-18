@@ -51,7 +51,7 @@ class ThreadController extends Controller
             $manager->persist($post);
             $manager->flush();
 
-            return $this->redirect('/forum/' . $thread->getTopic()->getLabel());
+            return $this->redirect('/forum/' . strtolower($thread->getTopic()->getName()));
 
         }
 

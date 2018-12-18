@@ -14,14 +14,14 @@
 
     <div class="card">
         <div id="container">
-            <h5 class="card-header">
-                <span id="topicName">{{ topic.getName() }}</span>
+            <div class="card-header">
+                <h5 id="topicName">{{ topic.getName() }}</h5>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.verified %}
                     <span>
                         <a href="{{ path('create_thread', { name : topic.getName()|lower } ) }}" type="button" class="btn btn-dark">New thread</a>
                     </span>
                 {% endif %}
-            </h5>
+            </div>
         </div>
         <div id="categories">
             {% for thread in threads %}

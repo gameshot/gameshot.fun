@@ -1,5 +1,4 @@
 body {
-    height: 100vh;
     background-color: lightgray;
 }
 
@@ -12,24 +11,12 @@ body li a {
     transition-duration: 0.3s;
 }
 
+/* Space between */
 .card {
     margin-bottom: 5px;
 }
 
-.card:last-child {
-    margin-bottom: 500px;
-}
-
-#container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #CC8400;
-    border: 1px solid rgba(143, 21, 21, 0.671);
-    color: rgba(143, 21, 21, 0.671);
-    border-radius: .25rem .25rem 0 0;
-}
-
+/* icon to hide/unhide Categories */
 .card>i {
     position: absolute;
     right: 0;
@@ -42,10 +29,23 @@ body li a {
     background-color: rgba(0, 0, 0, 0);
 }
 
+/* Card header */
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #CC8400;
+    border: 1px solid rgba(143, 21, 21, 0.671);
+    color: rgba(143, 21, 21, 0.671);
+    border-radius: .25rem .25rem 0 0;
+}
+
+/* different background-color for the list of categories/threads */
 .card-body:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.07);
 }
 
+/* hover darken the backgournd to emphesyse your choice */
 .card-body:nth-child(odd):hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -54,7 +54,7 @@ body li a {
     background-color: rgba(0, 0, 0, 0.035);
 }
 
-
+/* icon before each category/thread */
 .card-body>i {
     font-size: 1.2rem;
     padding: 1.2rem;
@@ -64,56 +64,70 @@ body li a {
     color: rgba(0, 0, 0, 0.5);
 }
 
+/* category/thread */
 .card-body a {
     font-family: 'Cairo', sans-serif;
     font-size: 1.2rem;
     color: #CC8400;
 }
 
-.card-body:last-of-type {
-    border: none;
-}
-
 /*
     THREAD-TEMPLATE
 */
 
+/* thread header container */
 .card-header {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-/*
-    CREATE-THREAD-TEMPLATE
-*/
-#search {
-    justify-content: flex-end;
-}
-
+/* h5-title center */
 #topicName {
     margin: auto 0;
 }
 
-#gameSearch {
-    position: relative;
+/*
+    CREATE-THREAD-TEMPLATE
+*/
+
+/* search field to the right */
+#search {
+    justify-content: flex-end;
+    font-family: 'Cairo', sans-serif;
 }
 
+/* Search/Close button */
+#buttonSearch,
+#closeSearch {
+    width: 5rem;
+    font-weight: bold;
+}
+
+/* search input */
+#gameSearch {
+    position: relative;
+    width: 20%;
+}
+
+/* all results shown with scrollbar*/
 #searchResult {
     display: none;
     list-style: none;
     padding: 5px;
     margin: 0;
     height: 150px;
+    width: 19.6%;
     overflow: auto;
     background-color: white;
     border: 1px solid #CC8400;
     border-radius: .25rem;
     position: absolute;
-    right: 15px;
+    right: 5.9375rem;
     z-index: 1;
 }
 
+/* single result */
 li {
     padding: 10px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -129,6 +143,8 @@ li {
 /*
     POST-TEMPLATE
 */
+
+/* each post is a card*/
 .postContainer {
     display: flex;
     justify-content: center;
@@ -142,18 +158,41 @@ li {
     border-radius: 3px;
 }
 
+/* first post */
 .postContainer:first-of-type {
     border: 2px solid #CC8400;
     background-color: rgb(230, 230, 230);
 }
 
+/* post user section*/
 .postContainer>.user {
-    margin: auto;
+    margin: 0 auto;
     text-align-last: center;
     width: 20%;
+    font-size: 1.1rem;
 }
 
+/* vertical hr */
+hr {
+    border: none;
+    border-left: 1px solid hsla(200, 10%, 50%, 0.3);
+    height: auto;
+    width: 1px;
+}
+
+/* post content section*/
 .postContainer>.post {
-    margin: auto;
+    margin: auto 2%;
     width: 80%;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+}
+
+/* new post section*/
+.postMe {
+    margin-top: 1rem;
+}
+
+.postMe div label {
+    display: none;
 }

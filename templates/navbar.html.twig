@@ -6,10 +6,14 @@
 
 
 {% block navbar %}
-<nav>
+<div class="hamburger" onclick="toggleButton()">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+<nav role="navigation" id="navbar">
     {%  set route = app.request.get('_route') %}
     {%  set uri = app.request.uri %}
-  	
   	<ul class="PrimaryNav with-indicator">
         <li class="Nav-item {% if route == 'game' and 'game' in uri %}is-active{% endif %}">
             <a href="{{ path("game") }}">Game</a>
@@ -37,4 +41,5 @@
       	{% endif %}
     </ul>
 </nav>
+<script src="scripts/nav.js"></script>
 {% endblock %}

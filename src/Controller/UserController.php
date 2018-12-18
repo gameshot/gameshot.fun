@@ -44,13 +44,14 @@ class UserController extends Controller
             $manager->persist($user);
             $manager->flush();
             $verificationUrl = 'http://localhost/verification/user=' . $user->getId();
-            $message = (new \Swift_Message('Hello Email'))
+            $message = (new \Swift_Message('Gameshot.fun email verification'))
                 ->setFrom('gameshot.fun@gmail.com')
                 ->setTo($user->getEmail())
                 ->setBody(
                     '<html>' .
                     '<head></head>' .
                     '<body>' .
+                    '<h2>In order to create new threads and post new comments you need to verify your email address.</h2>' .
                     '<p>To verify your email address, click on the link below:</p>' .
                     '<a href="'. $verificationUrl .'">Verify email</a>'.
                     '</body>' .
@@ -59,7 +60,7 @@ class UserController extends Controller
             
             $tokenStorage->setToken( new UsernamePasswordToken($user, null, 'main', $user->getRoles()));
             $mailer->send($message);
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('game');
         }
         return $this->render('User/Register.html.twig', ['formObj' => $form->createView()]);
     }
@@ -77,7 +78,7 @@ class UserController extends Controller
                 'last_username' => $lastUsername,
                 'error' => $error
             ]  
-           );
+       );
     }
 }
 

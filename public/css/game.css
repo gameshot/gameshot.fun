@@ -111,6 +111,11 @@ form {
 #restartButton {
     display: none;
     text-align: center;
+    margin: auto;
     margin-bottom: 20px;
 }
 
+.jumbotron_1>h2 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}

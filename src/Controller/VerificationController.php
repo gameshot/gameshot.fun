@@ -26,6 +26,8 @@ class VerificationController extends Controller
         $user->setVerified(true);
         $manager->persist($user);
         $manager->flush();
-        return $this->redirectToRoute('homepage');
+        return $this->render(
+            'MailVerification.html.twig'
+        );
     }
 }
