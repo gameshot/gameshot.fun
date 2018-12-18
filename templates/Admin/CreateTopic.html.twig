@@ -2,16 +2,24 @@
     {% include 'Admin/AdminNavbar.html.twig' %}
 {% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="/css/admin.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/createTopic.css" />
 {% endblock %}
 
 
 {% block body %}
     {% if is_granted('ROLE_ADMIN') %}
-        <h4>Keep the name & label as one word</h4>
-
-        {{ form(form) }}
-
+        <div class="jumbotron">
+            <h1 class="tilte">GAMESHOT/FORUM admin page, {{ app.user.username }}!</h1>
+            <div class="card text-white bg-warning mb-4" style="max-width: 200rem;">
+                <div class="card-header">Category creation.</div>
+                <div class="card-body">
+                    <i class="fab fa-forumbee"></i>
+                    <br>
+                    <p class="card-text">{{ form(form) }}</p>
+                </div>
+            </div>
+        </div>
     {% else %}
         <h2>Foxtrot Oscar!!!</h2>
     {% endif %}

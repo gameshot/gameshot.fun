@@ -1,0 +1,13 @@
+/* Body sizing and background settings JP */
+body {
+    height: 100vh;
+    background-color: #e9ecef;
+}
+
+/* Jumbotron display, sizing JP */
+.jumbotron {
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    border-radius: 25px;
+}
