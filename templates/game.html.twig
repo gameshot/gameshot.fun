@@ -12,14 +12,17 @@
 {% block body %}
 
     <main>
+
         <div id="phaser"></div><!–– Phaser/game integration JP -->
         <div id="restartButton">
-            <button id="restart" class="btn btn-warning">Restart the game</button>
+            <button id="restart" class="btn btn-warning">Change game</button>
         </div>
         <form>
             <!–– Bootstrap jumbotrons for game options JP -->
             <div class="jumbotron_1">
+                <h2>Generate your own game here!</h2>
                 <div class="d-flex justify-content-around">
+
                     <div id="form">
                         <h2>Select a background:</h2>
                         <div class="form-group d-flex justify-content-around">
@@ -199,7 +202,7 @@
                             <label for="winScore">Score to be reached in order to win?   (10 - 50)</label>
                             <input type="range" class="form-control-range" id="winScore" min="10" max="50" step="10">
                         </div>
-                        <button onclick="topFunction()" type="submit"  class="btn btn-primary">Submit to play GameShot</button>
+                        <button onclick="topFunction()" type="submit"  class="btn btn-primary">Play</button>
                     </div>
                 </div>
             </div>
