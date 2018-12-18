@@ -3,20 +3,46 @@
     {% include 'Admin/AdminNavbar.html.twig' %}
 {% endblock %}
 {% block stylesheets %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/admin.css" />
 {% endblock %}
 
 
 {% block body %}
-    <h2>Welcome to your admin page, !</h2>
-    <div class="jumbotron">
-        <h1 class="display-4">Informations about the website:</h1>
-        <p class="lead">Number of posts: <span>{{ postAmount }}</span></p>
-        <hr class="my-4">
-        <p class="lead">Number of users: <span>{{ userAmount }}</span></p>
-        <hr class="my-4">
-        <p class="lead">Number of threads: <span>{{ threadAmount }}</span></p>
+    <div class="title">
+    <h1>GAMESHOT/FORUM admin page, {{ app.user.username }}!</h1>
     </div>
+    <div class="jumbotron">
+    <h1 class="tilte">Forum statistics:</h1>
+        <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Posts statistics</div>
+            <div class="card-body">
+                <i class="fab fa-forumbee"></i>
+                <br>
+                <h4 class="card-title">Number of posts:</h4>
+                <p class="card-text">{{ postAmount }}</p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Users statistics</div>
+            <div class="card-body">
+                <i class="fas fa-user"></i>
+                <br>
+                <h4 class="card-title">Number of users:</h4>
+                <p class="card-text">{{ userAmount }}</p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Threads statistics</div>
+            <div class="card-body">
+                <i class="fab fa-wpforms"></i>
+                <h4 class="card-title">Number of threads:</h4>
+                <p class="card-text">{{ threadAmount }}</p>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
 
 {% block footer  "" %}

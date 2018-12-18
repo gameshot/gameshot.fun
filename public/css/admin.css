@@ -1,5 +1,24 @@
 /* Body sizing and background settings JP */
 body {
-    height: 100vh;
-    background-color: blue;
+    background-color: whitesmoke;
+}
+
+/* Title text alignment JP */
+.title {
+    text-align: center;
+}
+
+/* Jumbotron display, sizing JP */
+.jumbotron {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 25px;
+    height: 500px;
+}
+
+/* Card sizing JP */
+.text-white {
+    height: 15rem;
 }

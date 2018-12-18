@@ -22,30 +22,30 @@ class CategoryController extends Controller
      */
     public function categoryCreate(Request $request)
     {
-        if (!is_null($this->getUser())) {
-            if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
-                $category = new Category();
-                $form = $this->createForm(CategoryFormType::class, $category, ['standalone' => true]);
-                $form->handleRequest($request);
+        if (!is_null($this->getUser())) { // Check user registration
+            if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) { // Check role attribution
+                $category = new Category();  // Creates a new category
+                $form = $this->createForm(CategoryFormType::class, $category, ['standalone' => true]); // Create the form
+                $form->handleRequest($request); // Handles the form request
 
-                if ($form->isSubmitted() && $form->isValid()) {
-                    $manager = $this->getDoctrine()->getManager();
-                    $manager->persist($category);
-                    $manager->flush();
-                    return $this->redirectToRoute('admin');
+                if ($form->isSubmitted() && $form->isValid()) { // Check if the form is submitted and valid
+                    $manager = $this->getDoctrine()->getManager(); // Get the manager
+                    $manager->persist($category); // Persist the entity category
+                    $manager->flush(); // Flush to the database
+                    return $this->redirectToRoute('admin'); // Redirect to admin page
                 }
 
-                return $this->render(
-                    'Admin/CreateCategory.html.twig',
+                return $this->render( // Shows the page rendering
+                    'Admin/CreateCategory.html.twig', // Redirects to the template
                     [
-                        'form' => $form->createView()
+                        'form' => $form->createView() // Sends the form to twig
                     ]
                 );
             } else {
-                return $this->redirectToRoute('homepage');
+                return $this->redirectToRoute('homepage'); // If user role is not admin , redirects to homepage
             }
         }
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('homepage'); // If not registered redirects to homepage
 
     }
 }
