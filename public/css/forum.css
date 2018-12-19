@@ -184,8 +184,14 @@ hr {
 .postContainer>.post {
     margin: auto 2%;
     width: 80%;
+    word-break: break-word;
     font-family: 'Cairo', sans-serif;
     font-size: 1.1rem;
+}
+
+.postContainer>.user img {
+    height: auto;
+    width: 90%;
 }
 
 /* new post section*/
