@@ -180,7 +180,7 @@
     left: 0%;
   }
 
-  /* so the triangle lines up to the menu. between first and next element*/
+  /* so the triangle lines up to the menu. between first and next element */
   .with-indicator .Nav-item:nth-child(1).is-active~.Nav-item:last-child:before {
     left: 12.5%;
   }
@@ -202,13 +202,13 @@
   }
 
 
-  /* When you hover over the element the indicator will move ot it.
+  /* after: When you hover over the element the indicator will move ot it.
   when you mouse out it will return back to the is-active state.*/
   .with-indicator .Nav-item:nth-child(1):hover~.Nav-item:last-child:after {
     left: 0% !important;
   }
 
-  /* triangle lines up */
+  /* before: triangle lines up */
   .with-indicator .Nav-item:nth-child(1):hover~.Nav-item:last-child:before {
     left: 12.5% !important;
   }
@@ -229,11 +229,13 @@
     left: 62.5% !important;
   }
 
+  /* before: triangle for the last element */
   .with-indicator .Nav-item:last-child:hover:before,
   .with-indicator .Nav-item:last-child.is-active:before {
     left: 87.5% !important;
   }
 
+  /*after: indicator animation */
   .with-indicator .Nav-item:last-child:hover:after,
   .with-indicator .Nav-item:last-child.is-active:after {
     left: 75% !important;
