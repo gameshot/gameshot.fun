@@ -159,7 +159,9 @@ function checkForm(e) {
         scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#ff6600' });
     }
 
+    // This function is a loop called by the game that checks for different events happening
     function update() {
+        // Test for game over, make the score bigger with a game over message
         if (gameOver) {
             lastScoreText = scoreText.text;
             scoreText.setPosition(150, 40);
@@ -167,7 +169,8 @@ function checkForm(e) {
             scoreText.setFontSize(100);
             scoreText.setText(lastScoreText + '\nGame over');
             this.scene.pause('default');
-        } else if (score >= document.getElementById('winScore').value) {
+        } // Check if the player got the amount of points selected in the form -> Win
+        else if (score >= document.getElementById('winScore').value) {
             player.setTint(0x008000);
             lastScoreText = scoreText.text;
             scoreText.setPosition(150, 40);
@@ -177,37 +180,49 @@ function checkForm(e) {
             this.scene.pause('default');
         }
 
+        // Check if space or up arrow are pressed and the player is on the floor to perform a jump
         if ((cursors.space.isDown || cursors.up.isDown) && player.body.onFloor())
         {
             player.body.setVelocityY(-400); // jump up
         }
+        // Checking if the left arrow key is pressed
         if (cursors.left.isDown) {
             player.body.setVelocityX(-200); // move left
             player.flipX= true; // flip the sprite to the left
             if (player.body.onFloor()) {
                 player.anims.play('left', true); // play walk animation
             }
-        } else if (cursors.right.isDown) {
+        } // Check if the right arrow key is pressed
+        else if (cursors.right.isDown) {
             player.body.setVelocityX(200); // move right
             player.flipX = false; // use the original sprite looking to the right
             if (player.body.onFloor()) {
                 player.anims.play('right', true); // play walk animation
             }
         } else {
+            // Checks if the player is not moving anymore to stop the movement
             player.body.setVelocityX(0);
             player.anims.play('idle', true);
         }
     }
 
+    // Event to check every time the window is resized -> Responsivness
     window.addEventListener("resize", resize, false);
 
+    // Function called on window resize event
     function resize() {
+        // Div containing the generated canvas of the game
         let div = document.getElementById("phaser");
+        // The generated game canvas
         let canvas = document.querySelector("canvas");
+        // Grabbing the values of the window height and width
         let windowWidth = window.innerWidth-20;
         let windowHeight = window.innerHeight-150;
+        // Calculating the window ratio to adapt the frame
         let windowRatio = windowWidth / windowHeight;
+        // Calculating the game ratio to adapt it to the window
         let gameRatio = game.config.width / game.config.height;
+        // Adapting the sizes with the ratios
         if(windowRatio < gameRatio){
             canvas.style.width = windowWidth + "px";
             canvas.style.height = (windowWidth / gameRatio) + "px";
@@ -222,34 +237,44 @@ function checkForm(e) {
         }
     }
 
+    // Function called when a player touches an item in the game
     function collectItem (player, item)
     {
+        // First the item gets removed from the game
         item.disableBody(true, true);
+        // Increase the score
         score++;
+        // Add it to the score text displayed in the game
         scoreText.setText('Score: ' + score);
+
+        // Grabbed this line from the Phaser library example to place the items in different heights
         let x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
+        // Checking if all item have been collected
         if (items.countActive(true) === 0) {
             items.children.iterate(function (child) {
 
                 child.enableBody(true, child.x, 0, true, true);
 
             });
+            // Adding the enemy to a random x value at the top of the screen
             let enemy = enemies.create(x, 16, 'enemy');
             enemy.setBounce(1);
             enemy.setCollideWorldBounds(true);
+            // The velocity of the enemy is 'randomized'
             enemy.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            // Enemy has no gravity so it can bounce around the world
             enemy.allowGravity = false;
         }
     }
 
+    // Function called when the player touches the enemy
     function hitEnemy (player, enemy)
     {
+        // Pause the game so the player can't move anymore
         this.physics.pause();
-
+        // Set the player tint as red
         player.setTint(0xff0000);
-
-        player.anims.play('turn');
 
         gameOver = true;
     }
