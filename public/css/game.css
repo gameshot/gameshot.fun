@@ -1,6 +1,6 @@
 /* Body background color settings JP */
 body {
-    background-color: lightgray;
+    background-color: white;
 }
 
 /* Smooth scroll up for game play when clicking on submit button JP */
@@ -60,7 +60,8 @@ form {
 /* First jumbotron top padding settings for distancing from game/phaser  to allow screen centering JP */
 /* First jumbotron sizing, spacing, position and background settings JP */
 .jumbotron_1 {
-    width: 800px;
+    width: 75%;
+    min-width: 40%;
     margin: auto;
     margin-bottom: 4px;
     border-radius: 5px;
@@ -71,7 +72,8 @@ form {
 /* Multiple jumbotron sizing, spacing, position and background settings JP */
 .jumbotron_3,
 .jumbotron_5 {
-    width: 800px;
+    width: 75%;
+    min-width: 40%;
     margin: auto;
     margin-bottom: 4px;
     border-radius: 5px;
@@ -82,7 +84,8 @@ form {
 .jumbotron_2,
 .jumbotron_4,
 .jumbotron_6 {
-    width: 800px;
+    width: 75%;
+    min-width: 40%;
     margin: auto;
     margin-bottom: 4px;
     border-radius: 5px;
@@ -91,7 +94,8 @@ form {
 
 /* Submit jumbotron sizing, spacing, position and background settings JP */
 .jumbotron_7 {
-    width: 800px;
+    width: 75%;
+    min-width: 40%;
     margin: auto;
     margin-bottom: 4px;
     border-radius: 5px;
