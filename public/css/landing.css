@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron");
 
-/* Variables */
 h1 {
   font-family: 'Orbitron', sans-serif;
   color: rgba(255, 0, 0, 0.8);
@@ -11,8 +10,6 @@ h1 {
 
 body {
   background: #c8c8c8;
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
   overflow-y: hidden;
   background-image: radial-gradient(circle, rgba(255, 255, 0, 0.5), orange 325px, rgba(255, 0, 0, 0.8));
 }
@@ -171,6 +168,29 @@ section {
   background-image: url(/assets/img/landing/Pokemon.jpg);
   background-position: center;
   background-size: 100%;
+}
+
+/* Mobile/Tablet only Game is shown */
+@media screen and (max-width: 960px) {
+
+  .hex_row_odd,
+  .mobile {
+    display: none;
+  }
+
+  section {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .center {
+    float: initial;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
